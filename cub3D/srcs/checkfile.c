@@ -6,7 +6,7 @@
 /*   By: amaghat <amaghat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 18:11:43 by amaghat           #+#    #+#             */
-/*   Updated: 2021/04/25 17:54:59 by amaghat          ###   ########.fr       */
+/*   Updated: 2021/04/25 17:59:39 by amaghat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,9 @@ void	check_rgb(t_cub *cub, char *line, int i)
 	}
 }
 
-
 void	check_id(t_cub *cub, char *line)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	if (line[i] == 'R' && cub->id.r == 1)

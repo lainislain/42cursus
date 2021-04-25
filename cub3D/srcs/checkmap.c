@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map.c                                              :+:      :+:    :+:   */
+/*   checkmap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: amaghat <amaghat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 01:12:04 by amaghat           #+#    #+#             */
-/*   Updated: 2021/04/23 00:14:09 by amaghat          ###   ########.fr       */
+/*   Updated: 2021/04/25 18:05:45 by amaghat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	check_columns(t_cub *cub)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	i = 0;
 	while (i < cub->map.rows)
@@ -40,7 +40,7 @@ static void	check_columns(t_cub *cub)
 
 static void	check_rows(t_cub *cub)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (cub->map.map[0][i])
@@ -62,8 +62,8 @@ static void	check_rows(t_cub *cub)
 
 static void	check_spaces(t_cub *cub)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	i = 1;
 	while (i < cub->map.rows - 1)
@@ -71,7 +71,7 @@ static void	check_spaces(t_cub *cub)
 		j = 1;
 		while (cub->map.map[i][j])
 		{
-			if (cub->map.map[i][j] == '4' && ((j != 0 && cub->map.map[i]\
+			if (cub->map.map[i][j] == '4' && ((j != 0 && cub->map.map[i] \
 					[j - 1] == '0') || (j != cub->map.columns - 1 && \
 					cub->map.map[i][j + 1] == '0') || cub->map.map[i - 1][j] \
 					== '0' || cub->map.map[i + 1][j] == '0'))
@@ -89,7 +89,7 @@ static void	check_player(t_cub *cub, int i, int j)
 			cub->map.map[i][j] != 'W')
 		end_game(cub, "FileError: Invalid number of arguments\n");
 	if ((cub->map.map[i][j] == 'N' || cub->map.map[i][j] == 'S' \
-			|| cub->map.map[i][j] == 'E' || cub->map.map[i][j] == 'W')\
+			|| cub->map.map[i][j] == 'E' || cub->map.map[i][j] == 'W') \
 			&& cub->id.player == 0)
 	{
 		cub->rc.pos_x = j + 0.5;
@@ -98,15 +98,15 @@ static void	check_player(t_cub *cub, int i, int j)
 		cub->id.player = 1;
 	}
 	else if ((cub->map.map[i][j] == 'N' || cub->map.map[i][j] == 'S' \
-			|| cub->map.map[i][j] == 'E' || cub->map.map[i][j] == 'W')\
+			|| cub->map.map[i][j] == 'E' || cub->map.map[i][j] == 'W') \
 			&& cub->id.player == 1)
 		end_game(cub, "FileError: Multiplayer not available\n");
 }
 
-void		check_map(t_cub *cub)
+void	check_map(t_cub *cub)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
