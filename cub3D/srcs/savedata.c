@@ -36,7 +36,7 @@ static void	alloc_map(t_cub *cub)
 	i = 0;
 	while (i < cub->map.rows)
 	{
-		cub->map.map[i++] = ft_calloc(sizeof(char), \
+		cub->map.map[i] = ft_calloc(sizeof(char), \
 		(cub->map.columns + 1));
 		if (cub->map.map[i++] == NULL)
 			end_game(cub, "MemoryError: Allocation problem\n");
