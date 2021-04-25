@@ -29,7 +29,7 @@ void	check_res(t_cub *cub, char *line, int i)
 
 	j = 0;
 	res = ft_split(line + i, ' ');
-	while (res[j++])
+	while (res[j])
 	{
 		k = 0;
 		while (res[j][k] == '0')
@@ -39,6 +39,7 @@ void	check_res(t_cub *cub, char *line, int i)
 		else
 			n = ft_atoi(&res[j][k]);
 		get_res(cub, n, j);
+		j++;
 	}
 	if (j != 2)
 		end_game(cub, "FileError: Resolution is only 2 numbers\n");
