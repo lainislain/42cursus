@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: amaghat <amaghat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 16:10:42 by amaghat           #+#    #+#             */
-/*   Updated: 2021/04/23 00:14:09 by amaghat          ###   ########.fr       */
+/*   Updated: 2021/04/25 17:52:53 by amaghat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,13 @@ void		init_image(t_cub *cub)
 
 static void	init_game(t_cub *cub)
 {
-	int	x;
-	int	y;
-
-	x = 0;
-	y = 0;
 	cub->mlx_ptr = mlx_init();
 	if (cub->mlx_ptr == NULL)
 		end_game(cub, "MlxError: Problem in mlx library execution\n");
-	mlx_get_screen_size(cub->mlx_ptr, &x, &y);
-	if (cub->map.width > x)
-		cub->map.width = x;
-	if (cub->map.height > y)
-		cub->map.height = y;
+	if (cub->map.width > 5120)
+		cub->map.width = 5120;
+	if (cub->map.height > 2880)
+		cub->map.height = 2880;
 	if (cub->save == 0)
 	{
 		cub->win_ptr = mlx_new_window(cub->mlx_ptr, cub->map.width, cub->map.height, "cub3D");

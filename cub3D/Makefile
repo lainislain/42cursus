@@ -30,7 +30,7 @@ OBJS = srcs/cub3d.o \
 	   srcs/checkfile.o \
 	   srcs/minignl.o
 
-CC = clang
+CC = gcc
 
 RM = rm -rf
 
@@ -38,20 +38,20 @@ CFLAGS = -Wall -Werror -Wextra -g
 
 LINUXFLAGS = -lXext -lX11 -lm -lz
 
-MACFLAGS = -Lmlx -lmlx -framework OpenGL -framework Appkit
+MACFLAGS = -lmlx -framework OpenGL -framework Appkit
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
 		cd ./libft/ && make
-		cd ./minilibx_linux/ && make
-		#$(CC) $(CFLAGS) $(MACFLAGS) -o $(NAME) $(OBJS) ./libft/libft.a
-		$(CC) $(CFLAGS) $(LINUXFLAGS) -o $(NAME) -I./minilibx_linux/ $(OBJS) ./libft/libft.a ./minilibx_linux/libmlx_Linux.a
+		#cd ./minilibx_linux/ && make
+		$(CC) $(CFLAGS) $(MACFLAGS) -o $(NAME) $(OBJS) ./libft/libft.a
+		#$(CC) $(CFLAGS) $(LINUXFLAGS) -o $(NAME) -I./minilibx_linux/ $(OBJS) ./libft/libft.a ./minilibx_linux/libmlx_Linux.a
 
 clean:		
 		$(RM) $(OBJS)
 		cd ./libft/ && make fclean
-		cd ./minilibx_linux/ && make clean
+		#cd ./minilibx_linux/ && make clean
 
 fclean:		clean
 		$(RM) $(NAME) cub3d.bmp

@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   checkfile.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: amaghat <amaghat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 18:11:43 by amaghat           #+#    #+#             */
-/*   Updated: 2021/04/23 00:11:29 by amaghat          ###   ########.fr       */
+/*   Updated: 2021/04/25 17:54:59 by amaghat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void			check_res(t_cub *cub, char *line, int i)
+void	check_res(t_cub *cub, char *line, int i)
 {
-	char **res;
-	int j;
-	int k;
+	char	**res;
+	int		j;
+	int		k;
 
 	j = 0;
 	res = ft_split(line + i, ' ');
@@ -50,7 +50,7 @@ void			check_res(t_cub *cub, char *line, int i)
 
 void	check_rgb(t_cub *cub, char *line, int i)
 {
-	int tmp;
+	int		tmp;
 
 	if (i == 1)
 	{
