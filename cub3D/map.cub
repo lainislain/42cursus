@@ -1,12 +1,12 @@
 R 700 500
 
-NO ./textures/bluestone.xpm
+NO ./textures/greystone.xpm
 SO ./textures/eagle.xpm
 WE ./textures/purplestone.xpm
 EA ./textures/mossy.xpm
 S ./textures/barrel.xpm
-F 18,36,0
-C 25,25,112
+F 135,206,235
+C 99,201,0
 
         1111111111111111111111111
         1000000000110000000000001
