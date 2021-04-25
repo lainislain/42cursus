@@ -5,8 +5,7 @@ SO ./textures/eagle.xpm
 WE ./textures/purplestone.xpm
 EA ./textures/mossy.xpm
 S ./textures/barrel.xpm
-
-F 255,255,255
+F 192,192,192
 C 0,0,0
 
         1111111111111111111111111
