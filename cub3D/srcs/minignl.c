@@ -41,9 +41,14 @@ int			mini_gnl(int fd, char **line)
 	int		flag;
 
 	buffer = (char *)malloc(2);
-	*line = (char *)malloc(1);
-	if (line == NULL || *line == NULL || buffer == NULL)
+	if (line == NULL || buffer == NULL)
 		return (-1);
+	*line = (char *)malloc(1);
+	if (*line == NULL)
+	{
+		free(buffer);
+		return (-1);
+	}
 	*line[0] = '\0';
 	while ((flag = read(fd, buffer, 1)) > 0)
 	{

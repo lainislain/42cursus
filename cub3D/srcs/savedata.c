@@ -30,13 +30,15 @@ static void	alloc_map(t_cub *cub)
 		i++;
 		j++;
 	}
-	if (!(cub->map.map = malloc(sizeof(char*) * (cub->map.rows + 1))))
+	cub->map.map = malloc(sizeof(char*) * (cub->map.rows + 1));
+	if (cub->map.map == NULL)
 		end_game(cub, "MemoryError: Allocation problem\n");
 	i = 0;
 	while (i < cub->map.rows)
 	{
-		if (!(cub->map.map[i++] = ft_calloc(sizeof(char), \
-		(cub->map.columns + 1))))
+		cub->map.map[i++] = ft_calloc(sizeof(char), \
+		(cub->map.columns + 1));
+		if (cub->map.map[i++] == NULL)
 			end_game(cub, "MemoryError: Allocation problem\n");
 	}
 }

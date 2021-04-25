@@ -14,7 +14,7 @@
 
 static void	join_line(t_cub *cub, char *line)
 {
-	if (!cub->map.tmp)
+	if (cub->map.tmp == NULL)
 		cub->map.tmp = ft_strdup("");
 	else
 		cub->map.tmp = ft_strjoin(cub->map.tmp, "\n");

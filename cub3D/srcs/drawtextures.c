@@ -80,11 +80,13 @@ static t_texture	set_texture(char *root_texture, t_cub *cub)
 {
 	t_texture	texture;
 
-	if (!(texture.img_ptr = mlx_xpm_file_to_image(cub->mlx_ptr, root_texture, \
-	&texture.width, &texture.height)))
+	texture.img_ptr = mlx_xpm_file_to_image(cub->mlx_ptr, root_texture, \
+	&texture.width, &texture.height);
+	if (texture.img_ptr == NULL)
 		end_game(cub, "FileError: Invalid wall texture\n");
-	if (!(texture.get_data = (int *)mlx_get_data_addr(texture.img_ptr, \
-	&texture.bits_per_pixel, &texture.size_line, &texture.endian)))
+	texture.get_data = (int *)mlx_get_data_addr(texture.img_ptr, \
+	&texture.bits_per_pixel, &texture.size_line, &texture.endian);
+	if (texture.get_data == NULL)
 		end_game(cub, "FileError: Invalid wall texture\n");
 	return (texture);
 }
@@ -97,19 +99,22 @@ void				init_textures(t_cub *cub)
 	cub->south = set_texture(cub->map.south, cub);
 	cub->east = set_texture(cub->map.east, cub);
 	cub->west = set_texture(cub->map.west, cub);
-	if (!(cub->sprite = (t_sprite *)ft_calloc(sizeof(t_sprite), \
-	cub->rc.nbr_sprites)))
+	cub->sprite = (t_sprite *)ft_calloc(sizeof(t_sprite), \
+	cub->rc.nbr_sprites);
+	if (cub->sprite == NULL)
 		end_game(cub, "MemoryError: Allocation problem\n");
 	i = -1;
 	while (++i < cub->rc.nbr_sprites)
 	{
-		if (!(cub->sprite[i].img_ptr = mlx_xpm_file_to_image(cub->mlx_ptr, \
-		cub->map.sprite, &cub->sprite[i].width, &cub->sprite[i].height)))
+		cub->sprite[i].img_ptr = mlx_xpm_file_to_image(cub->mlx_ptr, \
+		cub->map.sprite, &cub->sprite[i].width, &cub->sprite[i].height);
+		if (cub->sprite[i].img_ptr == NULL)
 			end_game(cub, "FileError: Invalid sprite texture\n");
-		if (!(cub->sprite[i].get_data = \
+		cub->sprite[i].get_data = \
 		(int *)mlx_get_data_addr(cub->sprite[i].img_ptr, \
 		&cub->sprite[i].bits_per_pixel, &cub->sprite[i].size_line, \
-		&cub->sprite[i].endian)))
+		&cub->sprite[i].endian);
+		if (cub->sprite[i].get_data == NULL)
 			end_game(cub, "FileError: Invalid sprite texture\n");
 	}
 	coord_sprites(cub);
