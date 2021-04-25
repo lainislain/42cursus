@@ -20,7 +20,7 @@
 # include <fcntl.h>
 # include "../minilibx_linux/mlx.h"
 
-
+/*
 # define W 13
 # define S 1
 # define D 2
@@ -28,8 +28,8 @@
 # define RIGHT 124
 # define LEFT 123
 # define ESC 53
+*/
 
-/*
 # define W 119
 # define S 115
 # define D 100
@@ -37,7 +37,7 @@
 # define RIGHT 65361
 # define LEFT 65363
 # define ESC 65307
-*/
+
 
 typedef struct		s_bmp
 {

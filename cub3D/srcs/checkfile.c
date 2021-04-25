@@ -12,40 +12,36 @@
 
 #include "cub3d.h"
 
+void	get_res(t_cub *cub, int r, int j)
+{
+	if (j == 0)
+		cub->map.width = r;
+	else
+		cub->map.height = r;
+}
+
 void	check_res(t_cub *cub, char *line, int i)
 {
 	char	**res;
 	int		j;
 	int		k;
+	int 	n;
 
 	j = 0;
 	res = ft_split(line + i, ' ');
-	while (res[j])
-		j++;
-	if (j != 2)
-		end_game(cub, "FileError: Resolution is only 2 numbers\n");
-	j = 0;
-	while (res[j])
+	while (res[j++])
 	{
 		k = 0;
 		while (res[j][k] == '0')
 			k++;
 		if ((ft_strlen(res[j]) - k) > 4)
-		{
-			if (j == 0)
-				cub->map.width = 99999;
-			else
-				cub->map.height = 99999;
-		}
+			n = 999999;
 		else
-		{
-			if (j == 0)
-				cub->map.width = ft_atoi(&res[j][k]);
-			else
-				cub->map.height = ft_atoi(&res[j][k]);
-		}
-		j++;
+			n = ft_atoi(&res[j][k]);
+		get_res(cub, n, j);
 	}
+	if (j != 2)
+		end_game(cub, "FileError: Resolution is only 2 numbers\n");
 }
 
 void	check_rgb(t_cub *cub, char *line, int i)

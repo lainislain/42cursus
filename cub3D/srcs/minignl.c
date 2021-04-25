@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   mini_gnl.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: amaghat <amaghat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 12:10:40 by amaghat           #+#    #+#             */
 /*   Updated: 2021/02/28 19:14:09 by amaghat          ###   ########.fr       */
