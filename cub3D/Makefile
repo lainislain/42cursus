@@ -30,7 +30,7 @@ OBJS = srcs/cub3d.o \
 	   srcs/checkfile.o \
 	   srcs/minignl.o
 
-CC = gcc
+CC = clang
 
 RM = rm -rf
 
