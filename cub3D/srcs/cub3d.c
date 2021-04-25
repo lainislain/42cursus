@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghat <amaghat@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 16:10:42 by amaghat           #+#    #+#             */
 /*   Updated: 2021/04/23 00:14:09 by amaghat          ###   ########.fr       */
