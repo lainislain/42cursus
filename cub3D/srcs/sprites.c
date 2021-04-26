@@ -18,7 +18,7 @@ static void	color_sprite(t_cub *cub, int i)
 	{
 		if (cub->sprite[i].get_data[cub->rs.tex_x + cub->rs.tex_y * \
 		cub->sprite[i].width] != 0)
-			cub->sprite[i].color = cub->sprite[i].get_data\
+			cub->sprite[i].color = cub->sprite[i].get_data \
 			[cub->rs.tex_x + cub->rs.tex_y * cub->sprite[i].width];
 		else
 			cub->sprite[i].color = 0xBFD195;
@@ -97,7 +97,7 @@ static void	sort_sprites(t_cub *cub)
 	}
 }
 
-void		sprites(t_cub *cub)
+void	sprites(t_cub *cub)
 {
 	int	i;
 	int	x;
