@@ -45,10 +45,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*s2;
 	size_t	start;
 
-	s2 = ft_substr(s1, start, ft_get_last(s1, set) - start + 1);
 	if (!s1 || !set)
 		return (NULL);
 	start = ft_get_start(s1, set);
+	s2 = ft_substr(s1, start, ft_get_last(s1, set) - start + 1);
 	if (start == ft_strlen(s1))
 	{
 		s2 = malloc(sizeof(char));
