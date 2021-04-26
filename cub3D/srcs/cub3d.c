@@ -49,10 +49,10 @@ static void	init_game(t_cub *cub)
 	cub->mlx_ptr = mlx_init();
 	if (cub->mlx_ptr == NULL)
 		end_game(cub, "MlxError: Problem in mlx library execution\n");
-	if (cub->map.width > 1120)
-		cub->map.width = 1120;
-	if (cub->map.height > 880)
-		cub->map.height = 880;
+	if (cub->map.width > 5120)
+		cub->map.width = 5120;
+	if (cub->map.height > 2880)
+		cub->map.height = 2880;
 	if (cub->save == 0)
 	{
 		cub->win_ptr = mlx_new_window(cub->mlx_ptr, cub->map.width, \

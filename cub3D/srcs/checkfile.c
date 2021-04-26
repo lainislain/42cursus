@@ -35,7 +35,7 @@ void	check_res(t_cub *cub, char *line, int i)
 		while (res[j][k] == '0')
 			k++;
 		if ((ft_strlen(res[j]) - k) > 4)
-			n = 999999;
+			n = 7680;
 		else
 			n = ft_atoi(&res[j][k]);
 		get_res(cub, n, j);
