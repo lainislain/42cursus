@@ -69,7 +69,6 @@ typedef struct s_identifiers
 
 typedef struct s_sprite
 {
-	int				order;
 	double			distance;
 	double			coord_x;
 	double			coord_y;

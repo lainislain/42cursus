@@ -30,7 +30,7 @@ static void	draw_xray_sprite(t_cub *cub, int x, int i)
 	int	y;
 	int	d;
 
-	y = cub->rs.draw_start_y;
+	y = cub->rs.draw_start_y  + cub->map.width / 100 + 12;
 	while (y < cub->rs.draw_end_y)
 	{
 		d = (y * 256 - cub->map.height * 128 + cub->rs.height * 128);
@@ -51,8 +51,8 @@ static void	draw_xray_sprite(t_cub *cub, int x, int i)
 
 static void	init_sprite(t_cub *cub, int i)
 {
-	cub->rs.x = cub->sprite[cub->sprite[i].order].coord_x - cub->rc.pos_x;
-	cub->rs.y = cub->sprite[cub->sprite[i].order].coord_y - cub->rc.pos_y;
+	cub->rs.x = cub->sprite[i].coord_x - cub->rc.pos_x;
+	cub->rs.y = cub->sprite[i].coord_y - cub->rc.pos_y;
 	cub->rs.inv_det = 1 / (cub->rc.plan_x * cub->rc.dir_y \
 			- cub->rc.dir_x * cub->rc.plan_y);
 	cub->rs.transform_x = cub->rs.inv_det * \
@@ -109,7 +109,6 @@ void	sprites(t_cub *cub)
 	i = -1;
 	while (++i < cub->rc.nbr_sprites)
 	{
-		cub->sprite[i].order = i;
 		cub->sprite[i].distance = pow(cub->rc.pos_x - \
 		cub->sprite[i].coord_x, 2) + pow(cub->rc.pos_y - \
 		cub->sprite[i].coord_y, 2);
