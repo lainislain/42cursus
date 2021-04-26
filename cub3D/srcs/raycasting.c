@@ -14,7 +14,7 @@
 
 static void	draw_screen(t_cub *cub, int x, int y)
 {
-	cub->rc.line_height = (cub->map.height / cub->rc.perp_wall_dist);
+	cub->rc.line_height = (cub->map.width / cub->rc.perp_wall_dist);
 	cub->rc.draw_start = cub->map.height / 2 - cub->rc.line_height / 2;
 	cub->rc.draw_end = cub->map.height / 2 + cub->rc.line_height / 2;
 	if (cub->rc.draw_start < 0)
