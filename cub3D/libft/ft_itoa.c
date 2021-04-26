@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int			getnc(int n)
+static int	getnc(int n)
 {
 	int				nc;
 	unsigned int	temp;
@@ -33,7 +33,7 @@ static int			getnc(int n)
 	return (nc);
 }
 
-char				*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int				nc;
 	unsigned int	temp;
