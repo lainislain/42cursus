@@ -17,15 +17,15 @@ static void	move_left(t_cub *cub)
 	if (cub->mv.rot_left == 1)
 	{
 		cub->mv.olddir_x = cub->rc.dir_x;
-		cub->rc.dir_x = cub->rc.dir_x * cos(-cub->mv.rot_speed) \
-			- cub->rc.dir_y * sin(-cub->mv.rot_speed);
-		cub->rc.dir_y = cub->mv.olddir_x * sin(-cub->mv.rot_speed) \
-			+ cub->rc.dir_y * cos(-cub->mv.rot_speed);
+		cub->rc.dir_x = cub->rc.dir_x * cos(cub->mv.rot_speed) \
+			- cub->rc.dir_y * sin(cub->mv.rot_speed);
+		cub->rc.dir_y = cub->mv.olddir_x * sin(cub->mv.rot_speed) \
+			+ cub->rc.dir_y * cos(cub->mv.rot_speed);
 		cub->mv.oldplane_x = cub->rc.plan_x;
-		cub->rc.plan_x = cub->rc.plan_x * cos(-cub->mv.rot_speed) \
-			- cub->rc.plan_y * sin(-cub->mv.rot_speed);
-		cub->rc.plan_y = cub->mv.oldplane_x * sin(-cub->mv.rot_speed) \
-			+ cub->rc.plan_y * cos(-cub->mv.rot_speed);
+		cub->rc.plan_x = cub->rc.plan_x * cos(cub->mv.rot_speed) \
+			- cub->rc.plan_y * sin(cub->mv.rot_speed);
+		cub->rc.plan_y = cub->mv.oldplane_x * sin(cub->mv.rot_speed) \
+			+ cub->rc.plan_y * cos(cub->mv.rot_speed);
 	}
 	if (cub->mv.left == 1)
 	{
@@ -45,15 +45,15 @@ static void	move_right(t_cub *cub)
 	if (cub->mv.rot_right == 1)
 	{
 		cub->mv.olddir_x = cub->rc.dir_x;
-		cub->rc.dir_x = cub->rc.dir_x * cos(cub->mv.rot_speed) \
-			- cub->rc.dir_y * sin(cub->mv.rot_speed);
-		cub->rc.dir_y = cub->mv.olddir_x * sin(cub->mv.rot_speed) \
-			+ cub->rc.dir_y * cos(cub->mv.rot_speed);
+		cub->rc.dir_x = cub->rc.dir_x * cos(-cub->mv.rot_speed) \
+			- cub->rc.dir_y * sin(-cub->mv.rot_speed);
+		cub->rc.dir_y = cub->mv.olddir_x * sin(-cub->mv.rot_speed) \
+			+ cub->rc.dir_y * cos(-cub->mv.rot_speed);
 		cub->mv.oldplane_x = cub->rc.plan_x;
-		cub->rc.plan_x = cub->rc.plan_x * cos(cub->mv.rot_speed) \
-			- cub->rc.plan_y * sin(cub->mv.rot_speed);
-		cub->rc.plan_y = cub->mv.oldplane_x * sin(cub->mv.rot_speed) \
-			+ cub->rc.plan_y * cos(cub->mv.rot_speed);
+		cub->rc.plan_x = cub->rc.plan_x * cos(-cub->mv.rot_speed) \
+			- cub->rc.plan_y * sin(-cub->mv.rot_speed);
+		cub->rc.plan_y = cub->mv.oldplane_x * sin(-cub->mv.rot_speed) \
+			+ cub->rc.plan_y * cos(-cub->mv.rot_speed);
 	}
 	if (cub->mv.right == 1)
 	{

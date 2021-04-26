@@ -12,19 +12,6 @@
 
 #include "cub3d.h"
 
-void	free_tab(char **tab)
-{
-	int	i;
-
-	i = 0;
-	while (tab && tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
-}
-
 void	init_image(t_cub *cub)
 {
 	cub->new_image = mlx_new_image(cub->mlx_ptr, \
@@ -40,7 +27,6 @@ void	init_image(t_cub *cub)
 	if (cub->save == 1)
 		bmp(cub);
 	mlx_put_image_to_window(cub->mlx_ptr, cub->win_ptr, cub->new_image, 0, 0);
-	mlx_do_sync(cub->mlx_ptr);
 	mlx_destroy_image(cub->mlx_ptr, cub->new_image);
 }
 
@@ -49,16 +35,14 @@ static void	init_game(t_cub *cub)
 	cub->mlx_ptr = mlx_init();
 	if (cub->mlx_ptr == NULL)
 		end_game(cub, "MlxError: Problem in mlx library execution\n");
-	if (cub->map.width > 5120)
-		cub->map.width = 5120;
-	if (cub->map.height > 2880)
-		cub->map.height = 2880;
+	if (cub->map.width > 2560)
+		cub->map.width = 2560;
+	if (cub->map.height > 1440)
+		cub->map.height = 1440;
 	if (cub->save == 0)
 	{
 		cub->win_ptr = mlx_new_window(cub->mlx_ptr, cub->map.width, \
 		cub->map.height, "cub3D");
-		if (cub->win_ptr == NULL)
-			end_game(cub, "MlxError: Problem in mlx library execution\n");
 	}
 	cub->rs.dist_wall = ft_calloc(sizeof(double), cub->map.width);
 	if (cub->rs.dist_wall == NULL)
@@ -67,7 +51,7 @@ static void	init_game(t_cub *cub)
 	init_image(cub);
 	mlx_hook(cub->win_ptr, 2, 1, &key_press, cub);
 	mlx_hook(cub->win_ptr, 3, 2, &key_release, cub);
-	mlx_hook(cub->win_ptr, 33, 0, &key_exit, cub);
+	mlx_hook(cub->win_ptr, 17, 0L, &red_cross_exit, cub);
 	mlx_loop_hook(cub->mlx_ptr, &moveplayer, cub);
 	mlx_loop(cub->mlx_ptr);
 }

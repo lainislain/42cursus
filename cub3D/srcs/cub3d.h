@@ -18,7 +18,7 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
-# include "../minilibx_linux/mlx.h"
+# include <mlx.h>
 
 # define W 13
 # define S 1
@@ -225,4 +225,5 @@ void				*ft_calloc(size_t count, size_t size);
 int					mini_gnl(int fd, char **line);
 void				check_res(t_cub *cub, char *line, int i);
 int					count_columns(char *tmp);
+int					red_cross_exit(t_cub *cub);
 #endif

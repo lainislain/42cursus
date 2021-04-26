@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   keycode.c                                          :+:      :+:    :+:   */
+/*   keyhooks.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaghat <amaghat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 19:12:01 by amaghat           #+#    #+#             */
-/*   Updated: 2021/04/23 01:14:66 by amaghat          ###   ########.fr       */
+/*   Updated: 2021/04/26 16:40:20 by amaghat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	key_exit(t_cub *cub)
 {
-	end_game(cub, "Game closed succesully. See you next time!\n");
+	mlx_destroy_window(cub->mlx_ptr, cub->win_ptr);
+	end_game(cub, "");
 	return (0);
 }
 

@@ -40,7 +40,7 @@ void	draw_texture(t_cub *cub, int x)
 	wall_x -= floor(wall_x);
 	tex_x = wall_x * (double)tex_wall.width;
 	y = cub->rc.draw_start;
-	while (y++ < cub->rc.draw_end)
+	while (y++ < cub->rc.draw_end - 1)
 	{
 		tex_y = (y - cub->map.height / 2 + cub->rc.line_height / 2) \
 		* tex_wall.height / cub->rc.line_height;

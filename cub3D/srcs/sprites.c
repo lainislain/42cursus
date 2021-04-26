@@ -30,7 +30,7 @@ static void	draw_xray_sprite(t_cub *cub, int x, int i)
 	int	y;
 	int	d;
 
-	y = cub->rs.draw_start_y + 12;
+	y = cub->rs.draw_start_y + cub->map.width / 100 + 5;
 	while (y < cub->rs.draw_end_y)
 	{
 		d = (y * 256 - cub->map.height * 128 + cub->rs.height * 128);
@@ -79,19 +79,23 @@ static void	init_sprite(t_cub *cub, int i)
 
 static void	sort_sprites(t_cub *cub)
 {
-	int	i;
-	int	swap;
+	int			i;
+	int			j;
+	t_sprite	tmp;
 
 	i = 0;
-	while (i + 1 < cub->rc.nbr_sprites)
+	while (i < cub->rc.nbr_sprites)
 	{
-		if (cub->sprite[i].distance < \
-		cub->sprite[cub->sprite[i + 1].order].distance)
+		j = 0;
+		while (j < cub->rc.nbr_sprites - i - 1)
 		{
-			swap = cub->sprite[i].order;
-			cub->sprite[i].order = cub->sprite[i + 1].order;
-			cub->sprite[i + 1].order = swap;
-			sort_sprites(cub);
+			if (cub->sprite[j].distance < cub->sprite[j + 1].distance)
+			{
+				tmp = cub->sprite[j];
+				cub->sprite[j] = cub->sprite[j + 1];
+				cub->sprite[j + 1] = tmp;
+			}
+			j++;
 		}
 		i++;
 	}

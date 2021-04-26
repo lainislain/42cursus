@@ -12,6 +12,26 @@
 
 #include "cub3d.h"
 
+int	red_cross_exit(t_cub *cub)
+{
+	mlx_destroy_window(cub->mlx_ptr, cub->win_ptr);
+	exit(0);
+	return (0);
+}
+
+void	free_tab(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab && tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+}
+
 int	count_columns(char *tmp)
 {
 	int	res;
@@ -41,17 +61,6 @@ static void	free_memory(t_cub *cub)
 
 	i = 0;
 	if (cub->sprite)
-	{
-		while (i < cub->rc.nbr_sprites)
-		{
-			if (cub->sprite[i].get_data)
-				mlx_destroy_image(cub->mlx_ptr, cub->sprite[i].img_ptr);
-			if (cub->mlx_ptr && cub->win_ptr)
-				mlx_clear_window(cub->mlx_ptr, cub->win_ptr);
-			i++;
-		}
-	}
-	if (cub->sprite)
 		free(cub->sprite);
 	i = 0;
 	if (cub->map.tmp)
@@ -68,17 +77,6 @@ int	end_game(t_cub *cub, char s[])
 {
 	ft_putstr_fd(s, 1);
 	free_memory(cub);
-	free(cub->mlx_ptr);
-	free(cub->win_ptr);
-	free(cub->north.img_ptr);
-	free(cub->south.img_ptr);
-	free(cub->east.img_ptr);
-	free(cub->west.img_ptr);
-	free(cub->map.north);
-	free(cub->map.south);
-	free(cub->map.east);
-	free(cub->map.west);
-	free(cub->map.sprite);
 	exit(0);
 	return (0);
 }
