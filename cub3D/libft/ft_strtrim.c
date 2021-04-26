@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static size_t		ft_toskip(char c, char const *set)
+static size_t	ft_toskip(char c, char const *set)
 {
 	while (*set)
 		if (c == *set++)
@@ -20,7 +20,7 @@ static size_t		ft_toskip(char c, char const *set)
 	return (0);
 }
 
-static size_t		ft_get_start(char const *s1, char const *set)
+static size_t	ft_get_start(char const *s1, char const *set)
 {
 	size_t			i;
 
@@ -30,7 +30,7 @@ static size_t		ft_get_start(char const *s1, char const *set)
 	return (i);
 }
 
-static size_t		ft_get_last(char const *s1, char const *set)
+static size_t	ft_get_last(char const *s1, char const *set)
 {
 	size_t			i;
 
@@ -40,11 +40,12 @@ static size_t		ft_get_last(char const *s1, char const *set)
 	return (i);
 }
 
-char				*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*s2;
 	size_t	start;
 
+	s2 = ft_substr(s1, start, ft_get_last(s1, set) - start + 1);
 	if (!s1 || !set)
 		return (NULL);
 	start = ft_get_start(s1, set);
@@ -53,7 +54,7 @@ char				*ft_strtrim(char const *s1, char const *set)
 		s2 = malloc(sizeof(char));
 		*s2 = '\0';
 	}
-	else if (!(s2 = ft_substr(s1, start, ft_get_last(s1, set) - start + 1)))
+	else if (!s2)
 		return (NULL);
 	return (s2);
 }
