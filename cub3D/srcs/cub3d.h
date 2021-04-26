@@ -19,6 +19,7 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include <../minilibx_linux/mlx.h>
+//<../mlx.h>
 
 /*
 # define W 13
@@ -29,7 +30,6 @@
 # define LEFT 123
 # define ESC 53
 */
-
 
 # define W 119
 # define S 115
