@@ -96,7 +96,7 @@ static void	init_raycasting(t_cub *cub, int x)
 	calculate_steps(cub);
 }
 
-void		raycasting(t_cub *cub)
+void	raycasting(t_cub *cub)
 {
 	int	x;
 	int	y;

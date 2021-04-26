@@ -59,7 +59,7 @@ static void	header(t_bmp *bmp, t_cub *cub)
 	write(bmp->fd, &bmp->header, 54);
 }
 
-void		bmp(t_cub *cub)
+void	bmp(t_cub *cub)
 {
 	t_bmp	*bmp;
 
