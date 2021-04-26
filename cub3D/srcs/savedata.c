@@ -12,24 +12,32 @@
 
 #include "cub3d.h"
 
-static void	alloc_map(t_cub *cub)
+int	count_columns(char *tmp)
 {
+	int	res;
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	while (cub->map.tmp[i])
+	res = 0;
+	while (tmp[i])
 	{
-		if (cub->map.tmp[i] == '\n')
+		if (tmp[i] == '\n')
 		{
-			if (cub->map.columns < j)
-				cub->map.columns = j - 1;
+			if (res < j)
+				res = j - 1;
 			j = 0;
 		}
 		i++;
 		j++;
 	}
+	return res;
+}
+
+static void	alloc_map(t_cub *cub)
+{
+	cub->map.columns = count_columns(cub->map.tmp);
 	cub->map.map = malloc(sizeof(char *) * (cub->map.rows + 1));
 	if (cub->map.map == NULL)
 		end_game(cub, "MemoryError: Allocation problem\n");
