@@ -37,6 +37,8 @@ int	count_columns(char *tmp)
 
 static void	alloc_map(t_cub *cub)
 {
+	int	i;
+	
 	cub->map.columns = count_columns(cub->map.tmp);
 	cub->map.map = malloc(sizeof(char *) * (cub->map.rows + 1));
 	if (cub->map.map == NULL)
