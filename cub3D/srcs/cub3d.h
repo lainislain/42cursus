@@ -38,8 +38,7 @@
 # define LEFT 65363
 # define ESC 65307
 
-
-typedef struct		s_bmp
+typedef struct s_bmp
 {
 	unsigned char	header[54];
 	unsigned char	zero[3];
@@ -49,7 +48,7 @@ typedef struct		s_bmp
 	int				color;
 }					t_bmp;
 
-typedef struct		s_identifiers
+typedef struct s_identifiers
 {
 	int				r;
 	int				no;
