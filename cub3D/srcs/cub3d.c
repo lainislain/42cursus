@@ -12,6 +12,19 @@
 
 #include "cub3d.h"
 
+void    free_tab(char **tab)
+{
+    int i;
+
+    i = 0;
+    while (tab && tab[i])
+    {
+        free(tab[i]);
+        i++;
+    }
+    free(tab);
+}
+
 void		init_image(t_cub *cub)
 {
 	cub->new_image = mlx_new_image(cub->mlx_ptr, cub->map.width, cub->map.height);
@@ -20,10 +33,12 @@ void		init_image(t_cub *cub)
 	cub->get_data = (int *)mlx_get_data_addr(cub->new_image, &cub->bits_per_pixel, &cub->size_line, &cub->endian);
 	if (cub->get_data == NULL)
 		end_game(cub, "MlxError: Problem in mlx library execution\n");
+    if (cub->rs.dist_wall != NULL)
+        free(cub->rs.dist_wall);
 	cub->rs.dist_wall = ft_calloc(sizeof(double), cub->map.width);
 	if (cub->rs.dist_wall == NULL)
 		end_game(cub, "MemoryError: Allocation problem\n");
-	raycasting(cub);
+    raycasting(cub);
 	sprites(cub);
 	if (cub->rs.dist_wall)
 	{
@@ -52,7 +67,7 @@ static void	init_game(t_cub *cub)
 		if (cub->win_ptr == NULL)
 			end_game(cub, "MlxError: Problem in mlx library execution\n");
 	}
-	init_textures(cub);
+  	init_textures(cub);
 	init_image(cub);
 	mlx_hook(cub->win_ptr, 2, 1, &key_press, cub);
 	mlx_hook(cub->win_ptr, 3, 2, &key_release, cub);

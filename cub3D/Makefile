@@ -34,7 +34,7 @@ CC = clang
 
 RM = rm -rf
 
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
 
 LINUXFLAGS = -lXext -lX11 -lm -lz
 

@@ -14,12 +14,21 @@
 
 static void	join_line(t_cub *cub, char *line)
 {
+    char *tmp;
+
 	if (cub->map.tmp == NULL)
 		cub->map.tmp = ft_strdup("");
 	else
+    {
+      tmp = cub->map.tmp;
 		cub->map.tmp = ft_strjoin(cub->map.tmp, "\n");
-	cub->map.tmp = ft_strjoin(cub->map.tmp, line);
-	cub->map.rows++;
+	    free(tmp);
+    }
+    tmp = cub->map.tmp;
+    cub->map.tmp = ft_strjoin(cub->map.tmp, line);
+	free(tmp);
+    tmp = NULL;
+    cub->map.rows++;
 }
 
 static void	read_map(t_cub *cub, char *line)

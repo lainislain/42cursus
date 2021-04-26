@@ -41,6 +41,7 @@ void	check_res(t_cub *cub, char *line, int i)
 		get_res(cub, n, j);
 		j++;
 	}
+    free_tab(res);
 	if (j != 2)
 		end_game(cub, "FileError: Resolution is only 2 numbers\n");
 }
