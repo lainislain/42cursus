@@ -23,9 +23,9 @@ void	get_res(t_cub *cub, int r, int j)
 void	check_res(t_cub *cub, char *line, int i)
 {
 	char	**res;
-	int	j;
-	int	k;
-	int	n;
+	int		j;
+	int		k;
+	int		n;
 
 	j = 0;
 	res = ft_split(line + i, ' ');
