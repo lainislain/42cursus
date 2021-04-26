@@ -29,6 +29,8 @@
 # define RIGHT 124
 # define LEFT 123
 # define ESC 53
+# define MAX_WIDTH 2560
+# define MAX_HEIGHT 1440
 */
 
 # define W 119
@@ -38,6 +40,8 @@
 # define RIGHT 65361
 # define LEFT 65363
 # define ESC 65307
+# define MAX_WIDTH 1440
+# define MAX_HEIGHT 900
 
 typedef struct s_bmp
 {
