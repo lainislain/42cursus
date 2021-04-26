@@ -29,12 +29,12 @@ static void	move_left(t_cub *cub)
 	}
 	if (cub->mv.left == 1)
 	{
-		if (cub->map.map[(int)(cub->rc.pos_y - cub->rc.plan_y * 0.06)]\
+		if (cub->map.map[(int)(cub->rc.pos_y - cub->rc.plan_y * 0.06)] \
 		[(int)(cub->rc.pos_x)] != '1' && cub->map.map[(int)(cub->rc.pos_y \
 		- cub->rc.plan_y * 0.06)][(int)(cub->rc.pos_x)] != '2')
 			cub->rc.pos_y -= cub->rc.plan_y * 0.06;
 		if (cub->map.map[(int)(cub->rc.pos_y)][(int)(cub->rc.pos_x - \
-		cub->rc.plan_x * 0.06)] != '1' && cub->map.map[(int)(cub->rc.pos_y)]\
+		cub->rc.plan_x * 0.06)] != '1' && cub->map.map[(int)(cub->rc.pos_y)] \
 		[(int)(cub->rc.pos_x - cub->rc.plan_x * 0.06)] != '2')
 			cub->rc.pos_x -= cub->rc.plan_x * 0.06;
 	}
@@ -58,12 +58,12 @@ static void	move_right(t_cub *cub)
 	if (cub->mv.right == 1)
 	{
 		if (cub->map.map[(int)(cub->rc.pos_y)][(int)(cub->rc.plan_x * 0.06 \
-		+ cub->rc.pos_x)] != '1' && cub->map.map[(int)(cub->rc.pos_y)]\
+		+ cub->rc.pos_x)] != '1' && cub->map.map[(int)(cub->rc.pos_y)] \
 		[(int)(cub->rc.plan_x * 0.06 + cub->rc.pos_x)] != '2')
 			cub->rc.pos_x += cub->rc.plan_x * 0.06;
-		if (cub->map.map[(int)(cub->rc.pos_y + cub->rc.plan_y * 0.06)]\
+		if (cub->map.map[(int)(cub->rc.pos_y + cub->rc.plan_y * 0.06)] \
 		[(int)(cub->rc.pos_x)] != '1' \
-		&& cub->map.map[(int)(cub->rc.pos_y + cub->rc.plan_y * 0.06)]\
+		&& cub->map.map[(int)(cub->rc.pos_y + cub->rc.plan_y * 0.06)] \
 		[(int)(cub->rc.pos_x)] != '2')
 			cub->rc.pos_y += cub->rc.plan_y * 0.06;
 	}
@@ -73,34 +73,34 @@ static void	move_down(t_cub *cub)
 {
 	if (cub->mv.down == 1)
 	{
-		if (cub->map.map[(int)(cub->rc.pos_y)]\
+		if (cub->map.map[(int)(cub->rc.pos_y)] \
 		[(int)(cub->rc.pos_x - cub->rc.dir_x * 0.06)] != '1' \
-		&& cub->map.map[(int)(cub->rc.pos_y)]\
+		&& cub->map.map[(int)(cub->rc.pos_y)] \
 		[(int)(cub->rc.pos_x - cub->rc.dir_x * 0.06)] != '2')
 			cub->rc.pos_x -= cub->rc.dir_x * 0.06;
-		if (cub->map.map[(int)(cub->rc.pos_y - cub->rc.dir_y * 0.06)]\
+		if (cub->map.map[(int)(cub->rc.pos_y - cub->rc.dir_y * 0.06)] \
 		[(int)(cub->rc.pos_x)] != '1' \
-		&& cub->map.map[(int)(cub->rc.pos_y - cub->rc.dir_y * 0.06)]\
+		&& cub->map.map[(int)(cub->rc.pos_y - cub->rc.dir_y * 0.06)] \
 		[(int)(cub->rc.pos_x)] != '2')
 			cub->rc.pos_y -= cub->rc.dir_y * 0.06;
 	}
 }
 
-static void move_up(t_cub *cub)
+static void	move_up(t_cub *cub)
 {
-    if (cub->mv.up == 1)
-    {
-        if (cub->map.map[(int)(cub->rc.pos_y)]\
-        [(int)(cub->rc.pos_x + cub->rc.dir_x * 0.06)] != '1' \
-        && cub->map.map[(int)(cub->rc.pos_y)]\
-        [(int)(cub->rc.pos_x + cub->rc.dir_x * 0.06)] != '2')
-            cub->rc.pos_x += cub->rc.dir_x * 0.06;
-        if (cub->map.map[(int)(cub->rc.pos_y + cub->rc.dir_y * 0.06)]\
-        [(int)(cub->rc.pos_x)] != '1' \
-        && cub->map.map[(int)(cub->rc.pos_y + cub->rc.dir_y * 0.06)]\
-        [(int)(cub->rc.pos_x)] != '2')
-            cub->rc.pos_y += cub->rc.dir_y * 0.06;
-    }
+	if (cub->mv.up == 1)
+	{
+		if (cub->map.map[(int)(cub->rc.pos_y)] \
+		[(int)(cub->rc.pos_x + cub->rc.dir_x * 0.06)] != '1' \
+		&& cub->map.map[(int)(cub->rc.pos_y)] \
+		[(int)(cub->rc.pos_x + cub->rc.dir_x * 0.06)] != '2')
+        	cub->rc.pos_x += cub->rc.dir_x * 0.06;
+		if (cub->map.map[(int)(cub->rc.pos_y + cub->rc.dir_y * 0.06)] \
+		[(int)(cub->rc.pos_x)] != '1' \
+		&& cub->map.map[(int)(cub->rc.pos_y + cub->rc.dir_y * 0.06)] \
+		[(int)(cub->rc.pos_x)] != '2')
+			cub->rc.pos_y += cub->rc.dir_y * 0.06;
+	}
 }
 
 int	moveplayer(t_cub *cub)
