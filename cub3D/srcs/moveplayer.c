@@ -94,7 +94,7 @@ static void	move_up(t_cub *cub)
 		[(int)(cub->rc.pos_x + cub->rc.dir_x * 0.06)] != '1' \
 		&& cub->map.map[(int)(cub->rc.pos_y)] \
 		[(int)(cub->rc.pos_x + cub->rc.dir_x * 0.06)] != '2')
-        	cub->rc.pos_x += cub->rc.dir_x * 0.06;
+			cub->rc.pos_x += cub->rc.dir_x * 0.06;
 		if (cub->map.map[(int)(cub->rc.pos_y + cub->rc.dir_y * 0.06)] \
 		[(int)(cub->rc.pos_x)] != '1' \
 		&& cub->map.map[(int)(cub->rc.pos_y + cub->rc.dir_y * 0.06)] \
