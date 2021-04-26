@@ -14,9 +14,9 @@
 
 static size_t	ft_count_words(char *s, char c)
 {
-	size_t i;
-	size_t isc;
-	size_t count;
+	size_t	i;
+	size_t	isc;
+	size_t	count;
 
 	isc = 1;
 	i = 0;

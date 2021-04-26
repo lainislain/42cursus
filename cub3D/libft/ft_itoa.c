@@ -40,7 +40,7 @@ char	*ft_itoa(int n)
 	char			*res;
 
 	nc = getnc(n);
-	res = (char*)malloc(sizeof(char) * (nc + 1));
+	res = (char *)malloc(sizeof(char) * (nc + 1));
 	if (!res)
 		return (NULL);
 	res[nc] = '\0';
