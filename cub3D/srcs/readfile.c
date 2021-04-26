@@ -14,26 +14,26 @@
 
 static void	join_line(t_cub *cub, char *line)
 {
-    char *tmp;
+	char	*tmp;
 
 	if (cub->map.tmp == NULL)
 		cub->map.tmp = ft_strdup("");
 	else
     {
-      tmp = cub->map.tmp;
+		tmp = cub->map.tmp;
 		cub->map.tmp = ft_strjoin(cub->map.tmp, "\n");
-	    free(tmp);
+		free(tmp);
     }
-    tmp = cub->map.tmp;
-    cub->map.tmp = ft_strjoin(cub->map.tmp, line);
+	tmp = cub->map.tmp;
+	cub->map.tmp = ft_strjoin(cub->map.tmp, line);
 	free(tmp);
-    tmp = NULL;
-    cub->map.rows++;
+	tmp = NULL;
+	cub->map.rows++;
 }
 
 static void	read_map(t_cub *cub, char *line)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (line[i] == ' ' || line[i] == '\t')
@@ -89,7 +89,7 @@ static void	read_textures(t_cub *cub, char *line, int i)
 
 static void	read_line(t_cub *cub, char *line)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (line[i] == ' ' || line[i] == '\t')
@@ -111,12 +111,13 @@ static void	read_line(t_cub *cub, char *line)
 	read_map(cub, line);
 }
 
-int			read_file(char **argv, t_cub *cub)
+int	read_file(char **argv, t_cub *cub)
 {
 	int		fd;
 	char	*line;
 
-	if ((fd = open(argv[1], O_RDONLY)) < 1)
+	fd = open(argv[1], O_RDONLY);
+	if (fd < 1)
 		end_game(cub, "FileError: Configuration file not found\n");
 	while (mini_gnl(fd, &line))
 	{
