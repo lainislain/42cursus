@@ -32,7 +32,7 @@ static void	alloc_map(t_cub *cub)
 
 void	save_map(t_cub *cub)
 {
-	int i;
+	int	i;
 	int	j;
 	int	k;
 
@@ -102,7 +102,7 @@ char	*save_texture(char *line, int i)
 
 void	save_res(t_cub *cub, char *line, int i)
 {
-	int tmp;
+	int	tmp;
 
 	cub->id.r = 1;
 	i++;
@@ -117,4 +117,3 @@ void	save_res(t_cub *cub, char *line, int i)
 	}
 	check_res(cub, line, i);
 }
-
