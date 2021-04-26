@@ -30,7 +30,7 @@ static void	draw_xray_sprite(t_cub *cub, int x, int i)
 	int	y;
 	int	d;
 
-	y = cub->rs.draw_start_y  + cub->map.width / 100 + 12;
+	y = cub->rs.draw_start_y + cub->map.width / 100 + 12;
 	while (y < cub->rs.draw_end_y)
 	{
 		d = (y * 256 - cub->map.height * 128 + cub->rs.height * 128);
