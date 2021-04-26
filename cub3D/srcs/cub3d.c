@@ -63,7 +63,7 @@ static void	init_game(t_cub *cub)
 	cub->rs.dist_wall = ft_calloc(sizeof(double), cub->map.width);
 	if (cub->rs.dist_wall == NULL)
 		end_game(cub, "MemoryError: Allocation problem\n");
-  	init_textures(cub);
+	init_textures(cub);
 	init_image(cub);
 	mlx_hook(cub->win_ptr, 2, 1, &key_press, cub);
 	mlx_hook(cub->win_ptr, 3, 2, &key_release, cub);
@@ -103,13 +103,14 @@ int	main(int argc, char **argv)
 	t_cub	*cub;
 	int		len;
 
+	len = ft_strlen(argv[1]) - 4;
 	cub = (t_cub *)malloc(sizeof(t_cub));
 	if (cub == NULL)
 		end_game(cub, "MemoryError: Allocation problem\n");
 	ft_bzero(cub, sizeof(t_cub));
 	if (argc < 2 || argc > 3)
 		end_game(cub, "ArgError: Incorrect number of arguments\n");
-	else if (!(len = ft_strlen(argv[1]) - 4))
+	else if (len == 0)
 		end_game(cub, "ArgError: The file must have a name\n");
 	else if (ft_strncmp(argv[1] + len, ".cub", 4))
 		end_game(cub, "ArgError: The file must end with .cub\n");
