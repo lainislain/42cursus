@@ -35,7 +35,7 @@ static char	*chrjoin(char *s, char c)
 	return (str);
 }
 
-int			mini_gnl(int fd, char **line)
+int	mini_gnl(int fd, char **line)
 {
 	char	*buffer;
 	int		flag;
@@ -50,11 +50,13 @@ int			mini_gnl(int fd, char **line)
 		return (-1);
 	}
 	*line[0] = '\0';
-	while ((flag = read(fd, buffer, 1)) > 0)
+	flag = read(fd, buffer, 1);
+	while (flag > 0)
 	{
 		if (buffer[0] == '\n')
 			break ;
 		*line = chrjoin(*line, buffer[0]);
+		flag = read(fd, buffer, 1);
 	}
 	free(buffer);
 	return (flag);

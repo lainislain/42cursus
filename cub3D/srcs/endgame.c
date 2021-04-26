@@ -14,7 +14,7 @@
 
 static void	free_memory(t_cub *cub)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (cub->sprite)
@@ -41,7 +41,7 @@ static void	free_memory(t_cub *cub)
 	free(cub->map.map);
 }
 
-int			end_game(t_cub *cub, char s[])
+int	end_game(t_cub *cub, char s[])
 {
 	ft_putstr_fd(s, 1);
 	free_memory(cub);
