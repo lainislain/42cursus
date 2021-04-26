@@ -65,10 +65,10 @@ static void	init_sprite(t_cub *cub, int i)
 	cub->rs.draw_start_y = cub->map.height / 2 - cub->rs.height / 2;
 	if (cub->rs.draw_start_y < 0)
 		cub->rs.draw_start_y = 0;
-	cub->rs.draw_end_y = cub->map.width / 2 + cub->rs.height / 2;
+	cub->rs.draw_end_y = cub->map.height / 2 + cub->rs.height / 2;
 	if (cub->rs.draw_end_y >= cub->map.height)
 		cub->rs.draw_end_y = cub->map.height - 1;
-	cub->rs.width = abs((int)(cub->map.height / cub->rs.transform_y));
+	cub->rs.width = abs((int)(cub->map.width / cub->rs.transform_y));
 	cub->rs.draw_start_x = cub->rs.screen_x - cub->rs.width / 2;
 	if (cub->rs.draw_start_x < 0)
 		cub->rs.draw_start_x = 0;
