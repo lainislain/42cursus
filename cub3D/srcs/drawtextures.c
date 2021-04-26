@@ -24,7 +24,7 @@ static t_texture	choose_texture(t_cub *cub)
 		return (cub->north);
 }
 
-void				draw_texture(t_cub *cub, int x)
+void	draw_texture(t_cub *cub, int x)
 {
 	double		wall_x;
 	int			tex_x;
@@ -51,7 +51,7 @@ void				draw_texture(t_cub *cub, int x)
 	}
 }
 
-static void			coord_sprites(t_cub *cub)
+static void		coord_sprites(t_cub *cub)
 {
 	int	x;
 	int	y;
@@ -91,7 +91,7 @@ static t_texture	set_texture(char *root_texture, t_cub *cub)
 	return (texture);
 }
 
-void				init_textures(t_cub *cub)
+void	init_textures(t_cub *cub)
 {
 	int	i;
 

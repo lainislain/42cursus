@@ -54,6 +54,6 @@ clean:
 		cd ./minilibx_linux/ && make clean
 
 fclean:		clean
-		$(RM) $(NAME) cub3d.bmp
+		$(RM) $(NAME) cub3D.bmp
 
 re:		fclean all
