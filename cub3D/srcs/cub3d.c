@@ -60,7 +60,7 @@ static void	init_game(t_cub *cub)
 		if (cub->win_ptr == NULL)
 			end_game(cub, "MlxError: Problem in mlx library execution\n");
 	}
-	cub->rs.dist_wall = ft_calloc(sizeof(double), cub->map.width);
+	cub->rs.dist_wall = ft_malloc(sizeof(double), cub->map.width);
 	if (cub->rs.dist_wall == NULL)
 		end_game(cub, "MemoryError: Allocation problem\n");
 	init_textures(cub);

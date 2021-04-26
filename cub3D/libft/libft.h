@@ -47,7 +47,7 @@ int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 char				*ft_strdup(const char *s1);
-void				*ft_calloc(size_t count, size_t size);
+void				*ft_malloc(size_t count, size_t size);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
