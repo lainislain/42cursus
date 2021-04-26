@@ -58,7 +58,6 @@ static char	**ft_free_words(char **words, size_t i)
 	return (NULL);
 }
 
-
 char	**ft_split(char const *s, char c)
 {
 	char	**words;
