@@ -62,7 +62,7 @@ typedef struct s_identifiers
 	int				player;
 }					t_identifiers;
 
-typedef struct		s_sprite
+typedef struct s_sprite
 {
 	int				order;
 	double			distance;
@@ -78,7 +78,7 @@ typedef struct		s_sprite
 	int				color;
 }					t_sprite;
 
-typedef struct		s_texture
+typedef struct s_texture
 {
 	void			*img_ptr;
 	int				bits_per_pixel;
@@ -89,7 +89,7 @@ typedef struct		s_texture
 	int				height;
 }					t_texture;
 
-typedef struct		s_colors
+typedef struct s_colors
 {
 	int				roof;
 	int				floor;
@@ -100,7 +100,7 @@ typedef struct		s_colors
 	int				wall;
 }					t_colors;
 
-typedef struct		s_movement
+typedef struct s_movement
 {
 	int				up;
 	int				down;
@@ -113,7 +113,7 @@ typedef struct		s_movement
 	double			rot_speed;
 }					t_movement;
 
-typedef struct		s_raysprite
+typedef struct s_raysprite
 {
 	double			x;
 	double			y;
@@ -132,7 +132,7 @@ typedef struct		s_raysprite
 	double			*dist_wall;
 }					t_raysprite;
 
-typedef struct		s_raycasting
+typedef struct s_raycasting
 {
 	double			pos_x;
 	double			pos_y;
@@ -159,7 +159,7 @@ typedef struct		s_raycasting
 	int				nbr_sprites;
 }					t_raycasting;
 
-typedef struct		s_map
+typedef struct s_map
 {
 	char			**map;
 	char			*tmp;
@@ -177,7 +177,7 @@ typedef struct		s_map
 	char			orientation;
 }					t_map;
 
-typedef struct		s_cub
+typedef struct s_cub
 {
 	void			*mlx_ptr;
 	void			*win_ptr;
