@@ -221,7 +221,7 @@ int					key_release(int keycode, t_cub *cub);
 int					key_exit(t_cub *cub);
 int					moveplayer(t_cub *cub);
 int					end_game(t_cub *cub, char s[]);
-void                free_tab(char **tab);
+void				free_tab(char **tab);
 void				check_res(t_cub *cub, char *line, int i);
 int					count_columns(char *tmp);
 #endif
