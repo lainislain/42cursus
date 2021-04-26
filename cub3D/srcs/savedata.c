@@ -12,33 +12,10 @@
 
 #include "cub3d.h"
 
-int	count_columns(char *tmp)
-{
-	int	res;
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	res = 0;
-	while (tmp[i])
-	{
-		if (tmp[i] == '\n')
-		{
-			if (res < j)
-				res = j - 1;
-			j = 0;
-		}
-		i++;
-		j++;
-	}
-	return res;
-}
-
 static void	alloc_map(t_cub *cub)
 {
 	int	i;
-	
+
 	cub->map.columns = count_columns(cub->map.tmp);
 	cub->map.map = malloc(sizeof(char *) * (cub->map.rows + 1));
 	if (cub->map.map == NULL)
@@ -53,7 +30,7 @@ static void	alloc_map(t_cub *cub)
 	}
 }
 
-void		save_map(t_cub *cub)
+void	save_map(t_cub *cub)
 {
 	int i;
 	int	j;
@@ -82,9 +59,9 @@ void		save_map(t_cub *cub)
 	cub->map.map[cub->map.rows] = NULL;
 }
 
-int			save_color(t_cub *cub, char *line, int i)
+int	save_color(t_cub *cub, char *line, int i)
 {
-	int color;
+	int	color;
 
 	i++;
 	check_rgb(cub, line, i);
@@ -111,7 +88,7 @@ int			save_color(t_cub *cub, char *line, int i)
 	return (color);
 }
 
-char		*save_texture(char *line, int i)
+char	*save_texture(char *line, int i)
 {
 	char	*texture;
 
@@ -123,7 +100,7 @@ char		*save_texture(char *line, int i)
 	return (texture);
 }
 
-void		save_res(t_cub *cub, char *line, int i)
+void	save_res(t_cub *cub, char *line, int i)
 {
 	int tmp;
 

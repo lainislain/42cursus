@@ -12,6 +12,29 @@
 
 #include "cub3d.h"
 
+int	count_columns(char *tmp)
+{
+	int	res;
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	res = 0;
+	while (tmp[i])
+	{
+		if (tmp[i] == '\n')
+		{
+			if (res < j)
+				res = j - 1;
+			j = 0;
+		}
+		i++;
+		j++;
+	}
+	return (res);
+}
+
 static void	free_memory(t_cub *cub)
 {
 	int	i;
