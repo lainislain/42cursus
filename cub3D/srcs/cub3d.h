@@ -18,7 +18,7 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
-# include <../minilibx_linux/mlx.h>
+# include <./minilibx_linux/mlx.h>
 //<../mlx.h>
 
 /*
