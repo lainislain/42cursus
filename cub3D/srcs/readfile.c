@@ -23,7 +23,7 @@ static void	join_line(t_cub *cub, char *line)
 		tmp = cub->map.tmp;
 		cub->map.tmp = ft_strjoin(cub->map.tmp, "\n");
 		free(tmp);
-    }
+	}
 	tmp = cub->map.tmp;
 	cub->map.tmp = ft_strjoin(cub->map.tmp, line);
 	free(tmp);
