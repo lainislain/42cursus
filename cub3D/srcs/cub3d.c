@@ -12,28 +12,30 @@
 
 #include "cub3d.h"
 
-void    free_tab(char **tab)
+void	free_tab(char **tab)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (tab && tab[i])
-    {
-        free(tab[i]);
-        i++;
-    }
-    free(tab);
+	i = 0;
+	while (tab && tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
 }
 
-void		init_image(t_cub *cub)
+void	init_image(t_cub *cub)
 {
-	cub->new_image = mlx_new_image(cub->mlx_ptr, cub->map.width, cub->map.height);
+	cub->new_image = mlx_new_image(cub->mlx_ptr, \
+	cub->map.width, cub->map.height);
 	if (cub->new_image == NULL)
 		end_game(cub, "MlxError: Problem in mlx library execution\n");
-	cub->get_data = (int *)mlx_get_data_addr(cub->new_image, &cub->bits_per_pixel, &cub->size_line, &cub->endian);
+	cub->get_data = (int *)mlx_get_data_addr(cub->new_image, \
+	&cub->bits_per_pixel, &cub->size_line, &cub->endian);
 	if (cub->get_data == NULL)
 		end_game(cub, "MlxError: Problem in mlx library execution\n");
-    raycasting(cub);
+	raycasting(cub);
 	sprites(cub);
 	if (cub->save == 1)
 		bmp(cub);
@@ -53,11 +55,12 @@ static void	init_game(t_cub *cub)
 		cub->map.height = 880;
 	if (cub->save == 0)
 	{
-		cub->win_ptr = mlx_new_window(cub->mlx_ptr, cub->map.width, cub->map.height, "cub3D");
+		cub->win_ptr = mlx_new_window(cub->mlx_ptr, cub->map.width, \
+		cub->map.height, "cub3D");
 		if (cub->win_ptr == NULL)
 			end_game(cub, "MlxError: Problem in mlx library execution\n");
 	}
-    cub->rs.dist_wall = ft_calloc(sizeof(double), cub->map.width);
+	cub->rs.dist_wall = ft_calloc(sizeof(double), cub->map.width);
 	if (cub->rs.dist_wall == NULL)
 		end_game(cub, "MemoryError: Allocation problem\n");
   	init_textures(cub);
@@ -95,11 +98,11 @@ static void	direction(t_cub *cub)
 	cub->rc.plan_y = 0.66 * cub->rc.dir_x;
 }
 
-int			main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_cub	*cub;
 	int		len;
-	
+
 	cub = (t_cub *)malloc(sizeof(t_cub));
 	if (cub == NULL)
 		end_game(cub, "MemoryError: Allocation problem\n");

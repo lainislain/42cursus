@@ -51,7 +51,7 @@ void	draw_texture(t_cub *cub, int x)
 	}
 }
 
-static void		coord_sprites(t_cub *cub)
+static void	coord_sprites(t_cub *cub)
 {
 	int	x;
 	int	y;
