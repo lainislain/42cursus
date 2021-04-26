@@ -35,7 +35,6 @@ SRC = ft_memset.c\
 	  ft_toupper.c\
 	  ft_tolower.c\
 	  ft_strdup.c\
-	  ft_malloc.c\
 	  ft_substr.c\
 	  ft_putchar_fd.c\
 	  ft_putstr_fd.c\
@@ -70,7 +69,6 @@ OBG = ft_memset.o\
 	  ft_toupper.o\
 	  ft_tolower.o\
 	  ft_strdup.o\
-	  ft_malloc.o\
 	  ft_substr.o\
 	  ft_putchar_fd.o\
 	  ft_putstr_fd.o\

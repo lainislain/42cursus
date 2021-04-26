@@ -99,7 +99,7 @@ void	init_textures(t_cub *cub)
 	cub->south = set_texture(cub->map.south, cub);
 	cub->east = set_texture(cub->map.east, cub);
 	cub->west = set_texture(cub->map.west, cub);
-	cub->sprite = (t_sprite *)ft_malloc(sizeof(t_sprite), \
+	cub->sprite = (t_sprite *)ft_calloc(sizeof(t_sprite), \
 	cub->rc.nbr_sprites);
 	if (cub->sprite == NULL)
 		end_game(cub, "MemoryError: Allocation problem\n");

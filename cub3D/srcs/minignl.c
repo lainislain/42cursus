@@ -12,6 +12,17 @@
 
 #include "cub3d.h"
 
+void	*ft_calloc(size_t count, size_t size)
+{
+	char	*s;
+
+	s = malloc(count * size);
+	if (!s)
+		return (NULL);
+	ft_bzero(s, count * size);
+	return (s);
+}
+
 static char	*chrjoin(char *s, char c)
 {
 	int		i;
