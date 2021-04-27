@@ -34,7 +34,7 @@ CC = clang
 
 RM = rm -rf
 
-CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra -g
 
 LINUXFLAGS = -lXext -lX11 -lm -lz
 
@@ -44,14 +44,14 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 		cd ./libft/ && make
-		cd ./minilibx_linux/ && make
-		$(CC) $(CFLAGS) $(LINUXFLAGS) -o $(NAME) -I./minilibx_linux/ $(OBJS) ./libft/libft.a ./minilibx_linux/libmlx_Linux.a
-		#$(CC) $(CFLAGS) $(MACFLAGS) -o $(NAME) $(OBJS) ./libft/libft.a
+		#cd ./minilibx_linux/ && make
+		#$(CC) $(CFLAGS) $(LINUXFLAGS) -o $(NAME) -I./minilibx_linux/ $(OBJS) ./libft/libft.a ./minilibx_linux/libmlx_Linux.a
+		$(CC) $(CFLAGS) $(MACFLAGS) -o $(NAME) $(OBJS) ./libft/libft.a
 
 clean:		
 		$(RM) $(OBJS)
 		cd ./libft/ && make fclean
-		cd ./minilibx_linux/ && make clean
+		#cd ./minilibx_linux/ && make clean
 
 fclean:		clean
 		$(RM) $(NAME) cub3D.bmp
