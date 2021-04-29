@@ -87,13 +87,13 @@ int	main(int argc, char **argv)
 	t_cub	*cub;
 	int		len;
 
-	if (argc < 2 || argc > 3)
-		end_game(cub, "ArgError: Incorrect number of arguments\n");
-	len = ft_strlen(argv[1]) - 4;
 	cub = (t_cub *)malloc(sizeof(t_cub));
 	if (cub == NULL)
 		end_game(cub, "MemoryError: Allocation problem\n");
 	ft_bzero(cub, sizeof(t_cub));
+	if (argc < 2 || argc > 3)
+		end_game(cub, "ArgError: Incorrect number of arguments\n");
+	len = ft_strlen(argv[1]) - 4;
 	if (len == 0)
 		end_game(cub, "ArgError: The file must have a name\n");
 	else if (ft_strncmp(argv[1] + len, ".cub", 4))
