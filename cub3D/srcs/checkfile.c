@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   checkfile.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghat <amaghat@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 18:11:43 by amaghat           #+#    #+#             */
 /*   Updated: 2021/04/25 17:59:39 by amaghat          ###   ########.fr       */

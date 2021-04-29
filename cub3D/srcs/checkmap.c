@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   checkmap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghat <amaghat@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 01:12:04 by amaghat           #+#    #+#             */
 /*   Updated: 2021/04/25 18:05:45 by amaghat          ###   ########.fr       */

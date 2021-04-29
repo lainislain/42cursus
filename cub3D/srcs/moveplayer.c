@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   movement.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghat <amaghat@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 18:19:44 by amaghat           #+#    #+#             */
 /*   Updated: 2021/04/22 00:15:07 by amaghat          ###   ########.fr       */

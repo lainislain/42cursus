@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghat <amaghat@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 17:10:34 by amaghat           #+#    #+#             */
 /*   Updated: 2021/04/27 13:11:44 by amaghat          ###   ########.fr       */
@@ -19,8 +19,9 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include "../minilibx_linux/mlx.h"
-//<../mlx.h>
+//# include <mlx.h>
 
+/*
 # define W 13
 # define S 1
 # define D 2
@@ -30,8 +31,8 @@
 # define ESC 53
 # define MAX_WIDTH 2560
 # define MAX_HEIGHT 1440
+*/
 
-/*
 # define W 119
 # define S 115
 # define D 100
@@ -41,7 +42,6 @@
 # define ESC 65307
 # define MAX_WIDTH 1440
 # define MAX_HEIGHT 900
-*/
 
 typedef struct s_bmp
 {
