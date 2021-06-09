@@ -1,5 +1,19 @@
 #include "push_swap.h"
 
+int     check_duplicate(t_state *state, int n)
+{
+    t_pile  *tmp;
+
+    tmp = state->pile_a;
+    while (tmp)
+    {
+        if (tmp->value == n)
+            return (1);
+        tmp = tmp->next;
+    }
+    return (0);
+}
+
 void    init_state(t_state *state, int argc, char **argv)
 {
     int     i;
@@ -17,13 +31,9 @@ void    init_state(t_state *state, int argc, char **argv)
     state->array = (int*)malloc(sizeof(int) * argc);
     while(i < argc)
     {
-        if(!ft_isnum(*argv))
-        {
-            state->error = 0;
-            //exit_state(state);
-            break;
-        }
         n = ft_atoi(*argv);
+        if(!ft_isnum(*argv) || check_duplicate(state, n))
+            exit_state(state);
         state->array[i] = n;
         tmp = (t_pile*)malloc(sizeof(t_pile));
         tmp->value = n;
@@ -41,14 +51,14 @@ void    print_state(t_state *state)
     int         i;
 
     tmp = state->pile_a;
-    printf("===> Pile A:\n");
+    printf("===> Pile A: %d\n", pile_is_sorted(state->pile_a));
     while(tmp)
     {
         printf("%d\n",tmp->value);
         tmp = tmp->next;
     }
     tmp = state->pile_b;
-    printf("===> Pile B:\n");
+    printf("===> Pile B: %d\n", pile_is_sorted(state->pile_b));
     while(tmp)
     {
         printf("%d\n",tmp->value);
@@ -64,13 +74,53 @@ void    print_state(t_state *state)
     printf("===> Midpoint is: %d\n", state->array[state->size / 2 ]);
 }
 
-void    exit_state(t_state *state)
+int     pile_is_sorted(t_pile* pile)
 {
-    return ;
+    t_pile  *tmp;
+
+    if (!pile)
+        return (0);
+    tmp = pile;
+    while (tmp->next)
+    {
+        if (tmp->value > tmp->next->value)
+            return (0);
+        tmp = tmp->next;
+    }
+    return (1);
 }
 
-void    check_state(t_state *state)
+void    exit_state(t_state *state)
 {
+    t_pile  *tmp;
+    t_pile  *loop;
+
+    loop = state->pile_a;
+    while (loop)
+    {
+        tmp = loop;
+        loop = loop->next;
+        free(tmp);
+    }
+    loop = state->pile_b;
+    while (loop)
+    {
+        tmp = loop;
+        loop = loop->next;
+        free(tmp);
+    }
+    //free(state);
+    //state = NULL;
+    write(1, "Error\n", 6);
+    exit(0);
+}
+
+void    next_state(t_state *state)
+{
+    t_pile  *tmp;
+    int     *array;
+    int     midpoint;
+
     return ;
 }
 
@@ -82,7 +132,6 @@ int     main(int argc, char **argv)
 
     i = 0;
     init_state(&state, argc, argv);
-    check_state(&state);
     while(i < 5)
     {
         tmp = (t_pile*)malloc(sizeof(t_pile));
@@ -91,7 +140,6 @@ int     main(int argc, char **argv)
         add_back_pile(&(&state)->pile_b, tmp);
         i++;
     }
-    rrr(&state);
     bubble_sort(state.array, state.size);
     print_state(&state);
     return (0);

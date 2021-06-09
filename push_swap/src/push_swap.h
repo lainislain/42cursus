@@ -39,8 +39,10 @@ int     ft_issign(char c);
 void    add_back_pile(t_pile **pile, t_pile *stack);
 void    init_state(t_state *state, int argc, char **argv);
 void    exit_state(t_state *state);
-void    check_state(t_state *state);
 void    print_state(t_state *state);
+void    next_state(t_state *state);
 void	bubble_sort(int arr[], int n);
+int     pile_is_sorted(t_pile* pile);
+int     check_duplicate(t_state *state, int n);
 
 #endif
