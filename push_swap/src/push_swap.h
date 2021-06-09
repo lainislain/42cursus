@@ -17,6 +17,7 @@ typedef struct		s_state
 {
 	t_pile			*pile_a;
 	t_pile			*pile_b;
+	int				error;
 	int				size;
     int             nb_iters;
 }					t_state;
@@ -32,8 +33,12 @@ void    rr(t_state *state);
 void    rra(t_state *state);
 void    rrb(t_state *state);
 void    rrr(t_state *state);
+int     ft_isnum(char *str);
+int     ft_issign(char c);
 void    add_back_pile(t_pile **pile, t_pile *stack);
 void    init_state(t_state *state, int argc, char **argv);
-
+void    exit_state(t_state *state);
+void    check_state(t_state *state);
+void    print_state(t_state *state);
 
 #endif
