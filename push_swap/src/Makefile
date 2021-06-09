@@ -2,11 +2,13 @@ NAME = push_swap
 
 SRC = push_swap.c\
 	instructs.c\
-	moreinstructs.c
+	moreinstructs.c\
+	utiles.c
 
 OBG = push_swap.o\
 	instructs.o\
-	moreinstructs.o
+	moreinstructs.o\
+	utiles.o
 
 all: $(NAME)
 

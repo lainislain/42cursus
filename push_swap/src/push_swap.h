@@ -20,6 +20,7 @@ typedef struct		s_state
 	int				error;
 	int				size;
     int             nb_iters;
+	int				*array;
 }					t_state;
 
 void    sa(t_state *state);
@@ -40,5 +41,6 @@ void    init_state(t_state *state, int argc, char **argv);
 void    exit_state(t_state *state);
 void    check_state(t_state *state);
 void    print_state(t_state *state);
+void	bubble_sort(int arr[], int n);
 
 #endif
