@@ -8,6 +8,8 @@
 typedef struct		s_pile
 {
 	struct s_pile	*next;
+	struct s_pile	*prev;
+	int				partition;
 	int				value;
 }					t_pile;
 
@@ -18,5 +20,20 @@ typedef struct		s_state
 	int				size;
     int             nb_iters;
 }					t_state;
+
+void    sa(t_state *state);
+void    sb(t_state *state);
+void    ss(t_state *state);
+void    pb(t_state *state);
+void    pa(t_state *state);
+void    ra(t_state *state);
+void    rb(t_state *state);
+void    rr(t_state *state);
+void    rra(t_state *state);
+void    rrb(t_state *state);
+void    rrr(t_state *state);
+void    add_back_pile(t_pile **pile, t_pile *stack);
+void    init_state(t_state *state, int argc, char **argv);
+
 
 #endif

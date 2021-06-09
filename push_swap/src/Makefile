@@ -1,8 +1,12 @@
 NAME = push_swap
 
-SRC = push_swap.c
+SRC = push_swap.c\
+	instructs.c\
+	moreinstructs.c
 
-OBG = push_swap.o
+OBG = push_swap.o\
+	instructs.o\
+	moreinstructs.o
 
 all: $(NAME)
 
@@ -11,6 +15,7 @@ $(NAME):
 	gcc $(SRC) ../libft/libft.a -o $(NAME)
 clean:
 	rm -f $(OBG)
+	cd ../libft/ && make fclean
 
 fclean: clean
 	rm -f $(NAME)
