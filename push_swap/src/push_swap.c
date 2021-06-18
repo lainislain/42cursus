@@ -39,8 +39,8 @@ void    init_state(t_state *state, int argc, char **argv)
     state->size = argc;
     state->pile_b = NULL;
     state->pile_a = NULL;
-    state->error = 0;
-    state->nb_iters = 0;
+    state->n_iters = 0;
+    state->n_shunks = 1;
     state->array = (int*)malloc(sizeof(int) * argc);
     while(i < argc)
     {
@@ -122,8 +122,6 @@ void    exit_state(t_state *state)
         loop = loop->next;
         free(tmp);
     }
-    //free(state);
-    //state = NULL;
     write(1, "Error\n", 6);
     exit(0);
 }

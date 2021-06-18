@@ -29,9 +29,9 @@ typedef struct		s_state
 {
 	t_pile			*pile_a;
 	t_pile			*pile_b;
-	int				error;
 	int				size;
-    int             nb_iters;
+    int             n_iters;
+	int				n_shunks;
 	int				*array;
 }					t_state;
 
