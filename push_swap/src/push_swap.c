@@ -10,8 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
+
+void	mini_sort(t_state *state)
+{
+	int	x;
+	int	y;
+	int	z;
+
+	x = state->pile_a->value;
+	y = state->pile_a->next->value;
+    z = state->pile_a->next->next->value;
+	if (x > y && y < x && x < z)
+		sa(state);
+	else if ((x > y && y > z && x > y) ||
+            (x < y && y > z && x < z))
+	{
+		sa(state);
+		rra(state);
+	}
+	else if (x > y && y < z && x > z)
+		ra(state);
+	else
+		rra(state);
+}
 
 int     check_duplicate(t_state *state, int n)
 {
