@@ -27,6 +27,8 @@ typedef struct s_state
 	int		current_bit;
 }				t_state;
 
+int			ft_isdigit(int c);
+int     	ft_isnum(char *str);
 void		ft_putnbr(int nb);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putchar_fd(char c, int fd);

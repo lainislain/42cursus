@@ -12,6 +12,29 @@
 
 #include "../header.h"
 
+int		ft_isdigit(int c)
+{
+	return (c <= '9' && c >= '0');
+}
+
+int     ft_isnum(char *str)
+{
+    int     i;
+    int     n;
+
+    if (!str || !str[0])
+        return (0);
+    i = 0;
+    n = ft_strlen(str);
+    while (i < n)
+    {
+        if (!ft_isdigit(str[i]))
+            return (0);
+        i++;
+    }
+    return (1);
+}
+
 void	signal_sender(char c, pid_t pid)
 {
 	int	i;
@@ -27,10 +50,7 @@ void	signal_sender(char c, pid_t pid)
 		else
 			check = kill (pid, SIGUSR2);
 		if (check == -1)
-		{
 			ft_putstr_fd("=> Error\n Wrong PID\n", 1);
-			exit(EXIT_FAILURE);
-		}
 		usleep (100);
 	}
 }	
@@ -41,6 +61,8 @@ int	main(int ac, char **av)
 
 	if (ac != 3)
 		ft_putstr_fd("=> Error\nEnter 2 and only 2 arguments\n", 1);
+	else if (!ft_isnum(av[1]))
+		ft_putstr_fd("=> Error\nPID should be a positive integer\n", 1);
 	i = 0;
 	while (i < ft_strlen(av[2]))
 		signal_sender(av[2][i++], ft_atoi(av[1]));
