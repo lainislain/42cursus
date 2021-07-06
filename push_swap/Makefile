@@ -3,21 +3,21 @@ NAME = push_swap
 FLAGS = -Wall -Wextra -Werror
 
 SRCS = 	src/midpoint.c\
-		src/instructs.c\
-		src/moreinstructs.c\
-		src/utiles.c\
-		src/pushrot.c\
-		src/revpushrot.c
+	src/instructs.c\
+	src/moreinstructs.c\
+	src/utiles.c\
+	src/pushrot.c\
+	src/revpushrot.c
 		
 
 OBJS = 	push_swap.o\
-		checker.o\
-		midpoint.o\
-		instructs.o\
-		moreinstructs.o\
-		utiles.o\
-		pushrot.o\
-		revpushrot.o
+	checker.o\
+	midpoint.o\
+	instructs.o\
+	moreinstructs.o\
+	utiles.o\
+	pushrot.o\
+	revpushrot.o
 
 all: $(NAME)
 
