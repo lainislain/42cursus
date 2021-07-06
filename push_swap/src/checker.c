@@ -81,25 +81,25 @@ void	ft_exec_instructs(t_state *checker)
 	while (*instructs)
 	{
 		if (!ft_strncmp("sa", *instructs, 2))
-            sa(checker);
+            sa(checker, 1);
         else if (!ft_strncmp("sb", *instructs, 2))
-            sb(checker);
+            sb(checker, 1);
 		else if (!ft_strncmp("pa", *instructs, 2))
-			pa(checker);
+			pa(checker, 1);
 		else if (!ft_strncmp("pb", *instructs, 2))
-			pb(checker);
+			pb(checker, 1);
 		else if (!ft_strncmp("ra", *instructs, 2))
-			ra(checker);
+			ra(checker, 1);
 		else if (!ft_strncmp("rb", *instructs, 2))
-			rb(checker);
+			rb(checker, 1);
         else if (!ft_strncmp("rra", *instructs, 3))
-			rra(checker);
+			rra(checker, 1);
         else if (!ft_strncmp("rrb", *instructs, 3))
-			rrb(checker);
+			rrb(checker, 1);
         else if (!ft_strncmp("rr", *instructs, 2))
-			rr(checker);
+			rr(checker, 1);
         else if (!ft_strncmp("rrr", *instructs, 3))
-			rrr(checker);
+			rrr(checker, 1);
 		instructs++;
 	}
 }

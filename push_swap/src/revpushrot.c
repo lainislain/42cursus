@@ -67,12 +67,3 @@ void    exit_state(t_state *state)
     }
     exit(0);
 }
-
-void    next_state(t_state *state)
-{
-    t_pile  *tmp;
-    int     *array;
-    int     midpoint;
-
-    return ;
-}

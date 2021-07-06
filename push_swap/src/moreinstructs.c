@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void    ra(t_state *state)
+void    ra(t_state *state, int check)
 {
     t_pile	*tmp;
 	t_pile	*first;
@@ -27,9 +27,11 @@ void    ra(t_state *state)
 		tmp->next = first;
 		tmp->next->next = NULL;
 	}
+	if (!check)
+        ft_putstr_fd("ra\n", 1);
 }
 
-void    rb(t_state *state)
+void    rb(t_state *state, int check)
 {
     t_pile	*tmp;
 	t_pile	*first;
@@ -44,15 +46,19 @@ void    rb(t_state *state)
 		tmp->next = first;
 		tmp->next->next = NULL;
 	}
+	if (!check)
+        ft_putstr_fd("rb\n", 1);
 }
 
-void    rr(t_state *state)
+void    rr(t_state *state, int check)
 {
-    ra(state);
-    rb(state);
+    ra(state, 1);
+    rb(state, 1);
+	if (!check)
+        ft_putstr_fd("rr\n", 1);
 }
 
-void    rra(t_state *state)
+void    rra(t_state *state, int check)
 {
     t_pile	*tmp;
 	t_pile	*last;
@@ -67,9 +73,11 @@ void    rra(t_state *state)
 		last->next = state->pile_a;
 		state->pile_a = last;
 	}
+	if (!check)
+        ft_putstr_fd("rra\n", 1);
 }
 
-void    rrb(t_state *state)
+void    rrb(t_state *state, int check)
 {
     t_pile	*tmp;
 	t_pile	*last;
@@ -84,4 +92,6 @@ void    rrb(t_state *state)
 		last->next = state->pile_b;
 		state->pile_b = last;
 	}
+	if (!check)
+        ft_putstr_fd("rrb\n", 1);
 }

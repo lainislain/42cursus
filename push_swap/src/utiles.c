@@ -28,10 +28,12 @@ void    bubble_sort(int arr[], int n)
            }
 }
 
-void    rrr(t_state *state)
+void    rrr(t_state *state, int check)
 {
-    rra(state);
-    rrb(state);
+    rra(state, 1);
+    rrb(state, 1);
+    if (!check)
+        ft_putstr_fd("rrr\n", 1);
 }
 
 int     ft_issign(char c)

@@ -108,24 +108,24 @@ void	mini_sort(t_state *state)
         return ;
 	else if (x > y && y < x && x < z)
     {
-		sa(state);
+		sa(state, 0);
         write(1, "sa\n", 3);
     }
 	else if ((x > y && y > z && x > y) ||
             (x < y && y > z && x < z))
 	{
-		sa(state);
-		rra(state);
+		sa(state, 0);
+		rra(state, 0);
         write(1, "sa\nrra\n", 7);
 	}
 	else if (x > y && y < z && x > z)
     {
-		ra(state);
+		ra(state, 0);
         write(1, "ra\n", 3);
     }
 	else
     {
-		rra(state);
+		rra(state, 0);
         write(1, "rra\n", 4);
     }
 }
@@ -156,14 +156,14 @@ void    init_state(t_state *state, int argc, char **argv)
     state->size = argc;
     state->pile_b = NULL;
     state->pile_a = NULL;
-    state->n_parts = 1;
-    state->array = (int*)malloc(sizeof(int) * argc);
     while(i < argc)
     {
         n = ft_atoi(*argv);
         if(!ft_isnum(*argv) || check_duplicate(state, n))
+        {
+            ft_putstr_fd("Error\n", 1);
             exit_state(state);
-        state->array[i] = n;
+        }
         tmp = (t_pile*)malloc(sizeof(t_pile));
         tmp->value = n;
         tmp->partition = 0;

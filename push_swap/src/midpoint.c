@@ -45,16 +45,18 @@ void	ft_rev_pushrot(t_state *state)
 	while (tmp)
 	{
 		if (ft_len_partition(tmp, tmp->partition) == 1)
-			pa(state);
+			pa(state, 0);
+
 		else if (ft_len_partition(tmp, tmp->partition) == 2)
 		{
 			if (tmp->value <= tmp->next->value)
-				sb(state);
-			pa(state);
-			pa(state);
+				sb(state, 0);
+			pa(state, 0);
+			pa(state, 0);
 		}
 		else
-			ft_revmidpointalgo(state);
+			iter_btoa(state);
+        tmp = tmp->next;
 	}
 }
 
@@ -72,31 +74,31 @@ void	ft_pushrot(t_state *state, int rot)
 		midpoint = ft_find_midpoint(state->pile_a);
 		while (ft_check_inf(state->pile_a, midpoint))
 		{
-			if (ft_midpointalgo(state, midpoint, part))
+			if (iter_atob(state, midpoint, part))
 			{
-				ra(state);
+				ra(state, 0);
 				nra++;
 			}
 		}
 		while (!rot && nra--)
-			rra(state);
+			rra(state, 0);
 	}
 	if (!part_is_sorted(state->pile_a))
-		sa(state);
+		sa(state, 0);
 }
 
-int     ft_midpointalgo(t_state *state, int midpoint, int part)
+int     iter_atob(t_state *state, int midpoint, int part)
 {
 	if (state->pile_a->value < midpoint)
 	{
-		pb(state);
+		pb(state, 0);
 		state->pile_b->partition = part;
 		return (0);
 	}
 	return (1);
 }
 
-void	ft_revmidpointalgo(t_state *state)
+void	iter_btoa(t_state *state)
 {
 	int	midpoint;
 	int	nrb;
@@ -107,17 +109,17 @@ void	ft_revmidpointalgo(t_state *state)
 	{
 		if (state->pile_b->value > midpoint)
 		{
-			pa(state);
+			pa(state, 0);
 			state->pile_a->partition++;
 			state->pile_a->partition++;
 		}
 		else
 		{
-			rb(state);
+			rb(state, 0);
 			nrb++;
 		}
 	}
 	while (nrb--)
-		rrb(state);
+		rrb(state, 0);
 	ft_pushrot(state, 0);
 }
