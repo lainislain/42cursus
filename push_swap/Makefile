@@ -10,7 +10,7 @@ SRCS = 	src/midpoint.c\
 		src/revpushrot.c
 		
 
-OBGS = 	push_swap.o\
+OBJS = 	push_swap.o\
 		checker.o\
 		midpoint.o\
 		instructs.o\
@@ -30,7 +30,7 @@ $(NAME):
 	gcc $(FLAGS) src/checker.c push_swap.a ./libft/libft.a -o checker
 	gcc $(FLAGS) src/push_swap.c push_swap.a ./libft/libft.a -o push_swap
 clean:
-	rm -f $(OBGS)
+	rm -f $(OBJS)
 	cd ./libft/ && make fclean
 	rm -rf push_swap.a
 
