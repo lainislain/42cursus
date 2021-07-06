@@ -30,8 +30,8 @@ typedef struct		s_state
 	t_pile			*pile_a;
 	t_pile			*pile_b;
 	int				size;
-    int             n_iters;
-	int				n_shunks;
+    char			**instructs;
+	int				n_parts;
 	int				*array;
 }					t_state;
 
@@ -56,5 +56,21 @@ void    next_state(t_state *state);
 void	bubble_sort(int arr[], int n);
 int     pile_is_sorted(t_pile* pile);
 int     check_duplicate(t_state *state, int n);
+char	*ft_read_instructs(t_state *checker);
+char	*ft_read_instruct(void);
+void	ft_check_instruct(t_state *state, char *str);
+void	ft_exec_instructs(t_state *checker);
+int		ft_find_midpoint(t_pile *pile);
+void	ft_rev_pushrot(t_state *state);
+void	ft_pushrot(t_state *state, int rot);
+int		ft_midpointalgo(t_state *state, int midpoint, int part);
+void	ft_revmidpointalgo(t_state *state);
+int		ft_len_pile(t_pile *pile);
+int		ft_lastinpile_a(t_state *state);
+int		ft_len_partition(t_state *state, int part);
+int		ft_check_inf(t_pile *pile, int midpoint);
+int		ft_check_sup(t_pile *pile, int midpoint);
+void	mini_sort(t_state *state);
+
 
 #endif

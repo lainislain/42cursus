@@ -58,15 +58,19 @@ void	signal_sender(char c, pid_t pid)
 int	main(int ac, char **av)
 {
 	int		i;
+	static char acknmsg[] = "\n-> Message received successfully";
 
 	if (ac != 3)
 		ft_putstr_fd("=> Error\nEnter 2 and only 2 arguments\n", 1);
 	else if (!ft_isnum(av[1]))
 		ft_putstr_fd("=> Error\nPID should be a positive integer\n", 1);
 	i = 0;
-	while (i < ft_strlen(av[2]))
+	while (av[2][i])
 		signal_sender(av[2][i++], ft_atoi(av[1]));
+	i = 0;
+	while (acknmsg[i])
+		signal_sender(acknmsg[i++], ft_atoi(av[1]));
 	signal_sender('\n', ft_atoi(av[1]));
-	ft_putstr_fd("=> Message sent succussfully\n", 1);
+	ft_putstr_fd("-> Message sent successfully\n", 1);
 	return (0);
 }

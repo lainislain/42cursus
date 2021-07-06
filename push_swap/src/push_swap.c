@@ -12,6 +12,89 @@
 
 #include "push_swap.h"
 
+void	ft_check_instruct(t_state *state, char *str)
+{
+	if (ft_strcmp("sa", str) && ft_strcmp("sb", str)
+		&& ft_strcmp("ss", str) && ft_strcmp("pa", str)
+		&& ft_strcmp("pb", str) && ft_strcmp("ra", str)
+		&& ft_strcmp("rb", str) && ft_strcmp("rr", str)
+		&& ft_strcmp("rra", str) && ft_strcmp("rrb", str)
+		&& ft_strcmp("rrr", str))
+		exit_state(state);
+}
+
+int	ft_len_pile(t_pile *pile)
+{
+	int	len;
+    t_pile *tmp;
+
+	tmp = pile;
+	len = 0;
+	while (tmp)
+	{
+		len++;
+		tmp = tmp->next;
+	}
+	return (len);
+}
+
+int	ft_lastinpile_a(t_state *state)
+{
+	t_pile	*tmp;
+
+	tmp = state->pile_a;
+	while (tmp->next)
+		tmp = tmp->next;
+	return (tmp->value);
+}
+
+int	ft_len_partition(t_state *state, int part)
+{
+	int	len;
+    t_pile	*tmp;
+
+	len = 0;
+    tmp = state->pile_a;
+	while (tmp && tmp->partition == part)
+	{
+		len++;
+		tmp = tmp->next;
+	}
+	return (len);
+}
+
+int	ft_check_inf(t_pile *pile, int midpoint)
+{
+	int		part;
+    t_pile	*tmp;
+
+	tmp = pile;
+    part = pile->partition;
+	while (tmp && tmp->partition == part)
+	{
+		if (tmp->value < midpoint)
+			return (1);
+		tmp = tmp->next;
+	}
+	return (0);
+}
+
+int	ft_check_sup(t_pile *pile, int midpoint)
+{
+	int		part;
+	t_pile	*tmp;
+
+	part = pile->partition;
+	tmp = pile;
+	while (tmp && tmp->partition == part)
+	{
+		if (tmp->value > midpoint)
+			return (1);
+		tmp = tmp->next;
+	}
+	return (0);
+}
+
 void	mini_sort(t_state *state)
 {
 	int	x;
@@ -61,8 +144,7 @@ void    init_state(t_state *state, int argc, char **argv)
     state->size = argc;
     state->pile_b = NULL;
     state->pile_a = NULL;
-    state->n_iters = 0;
-    state->n_shunks = 1;
+    state->n_parts = 1;
     state->array = (int*)malloc(sizeof(int) * argc);
     while(i < argc)
     {
@@ -174,6 +256,7 @@ int     main(int argc, char **argv)
         i++;
     }
     bubble_sort(state.array, state.size);
+    mini_sort(&state);
     print_state(&state);
     return (0);
 }
