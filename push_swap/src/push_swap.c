@@ -30,17 +30,17 @@ void    print_state(t_state *state)
     t_pile      *tmp;
 
     tmp = state->pile_a;
-    printf("===> Pile A: %d\n", pile_is_sorted(state->pile_a));
+    ft_putstr_fd("===> Pile A:\n", 1);
     while(tmp)
     {
-        printf("%d\n",tmp->value);
+        ft_putnbr_fd(tmp->value, 1);
         tmp = tmp->next;
     }
     tmp = state->pile_b;
-    printf("===> Pile B: %d\n", pile_is_sorted(state->pile_b));
+    ft_putstr_fd("===> Pile B:\n", 1);
     while(tmp)
     {
-        printf("%d\n",tmp->value);
+        ft_putnbr_fd(tmp->value, 1);
         tmp = tmp->next;
     }
 }

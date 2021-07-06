@@ -11,10 +11,8 @@
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#define PUSH_SWAP_H
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "../libft/libft.h"
 
 typedef struct		s_pile
@@ -71,6 +69,5 @@ int		ft_check_inf(t_pile *pile, int midpoint);
 int		ft_check_sup(t_pile *pile, int midpoint);
 void	mini_sort(t_state *state);
 void	ft_midpoint_algo(t_state *state);
-
 
 #endif

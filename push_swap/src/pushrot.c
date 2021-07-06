@@ -109,24 +109,24 @@ void	mini_sort(t_state *state)
 	else if (x > y && y < x && x < z)
     {
 		sa(state, 0);
-        write(1, "sa\n", 3);
+        ft_putstr_fd("sa\n", 1);
     }
 	else if ((x > y && y > z && x > y) ||
             (x < y && y > z && x < z))
 	{
 		sa(state, 0);
 		rra(state, 0);
-        write(1, "sa\nrra\n", 7);
+		ft_putstr_fd("sa\nrra\n", 1);
 	}
 	else if (x > y && y < z && x > z)
     {
 		ra(state, 0);
-        write(1, "ra\n", 3);
+        ft_putstr_fd("ra\n", 1);
     }
 	else
     {
 		rra(state, 0);
-        write(1, "rra\n", 4);
+        ft_putstr_fd("rra\n", 1);
     }
 }
 
