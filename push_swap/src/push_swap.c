@@ -28,7 +28,6 @@ void	ft_midpoint_algo(t_state *state)
 void    print_state(t_state *state)
 {
     t_pile      *tmp;
-    int         i;
 
     tmp = state->pile_a;
     printf("===> Pile A: %d\n", pile_is_sorted(state->pile_a));
@@ -49,18 +48,13 @@ void    print_state(t_state *state)
 int     main(int argc, char **argv)
 {
     t_state     state;
-    t_pile      *tmp;
-    int         i;
 
-    i = 0;
     init_state(&state, argc, argv);
     if (state.pile_a)
     {
         ft_midpoint_algo(&state);
         exit_state(&state);
     }
-
-    //mini_sort(&state);
     //print_state(&state);
     return (0);
 }

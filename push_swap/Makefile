@@ -1,6 +1,6 @@
 NAME = push_swap
 
-FLAGS = #-Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 
 SRCS = 	src/midpoint.c\
 		src/instructs.c\
