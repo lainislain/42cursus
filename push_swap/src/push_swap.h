@@ -60,6 +60,7 @@ char	*ft_read_instructs(t_state *checker);
 char	*ft_read_instruct(void);
 void	ft_check_instruct(t_state *state, char *str);
 void	ft_exec_instructs(t_state *checker);
+void	ft_checker(t_state *checker);
 int		ft_find_midpoint(t_pile *pile);
 void	ft_rev_pushrot(t_state *state);
 void	ft_pushrot(t_state *state, int rot);

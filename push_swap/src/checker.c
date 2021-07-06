@@ -25,7 +25,7 @@ int	main(int ac, char **av)
 		checker.instructs = ft_split(instructs, ' ');
 		free(instructs);
 		ft_exec_instructs(&checker);
-		ft_checker(checker);
+		ft_checker(&checker);
 		ft_free(&checker);
 	}
 	return (0);
@@ -103,4 +103,14 @@ void	ft_exec_instructs(t_state *checker)
 			rrr(checker);
 		instructs++;
 	}
+}
+
+void	ft_checker(t_state *checker)
+{
+	if (checker->pile_b || !ft_is_sorted(checker->pile_a))
+	{
+		ft_putstr("KO\n");
+		exit_state(checker);
+	}
+	ft_putstr("OK\n");
 }
