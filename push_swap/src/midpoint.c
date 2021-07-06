@@ -65,7 +65,7 @@ void	ft_pushrot(t_state *state, int rot)
     int nra;
 
 	part = state->pile_a->partition;
-	while (!ft_is_sorted(state->pile_a) && ft_len_partition(state->pile_a, state->pile_a->partition) > 2)
+	while (!part_is_sorted(state->pile_a) && ft_len_partition(state->pile_a, state->pile_a->partition) > 2)
 	{
 		part++;
 		nra = 0;
@@ -81,7 +81,7 @@ void	ft_pushrot(t_state *state, int rot)
 		while (!rot && nra--)
 			rra(state);
 	}
-	if (!ft_is_sorted(state->pile_a))
+	if (!part_is_sorted(state->pile_a))
 		sa(state);
 }
 
@@ -119,5 +119,5 @@ void	ft_revmidpointalgo(t_state *state)
 	}
 	while (nrb--)
 		rrb(state);
-	ft_pushpot(state, 0);
+	ft_pushrot(state, 0);
 }
