@@ -12,15 +12,15 @@
 
 #include "header.h"
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	return (c <= '9' && c >= '0');
 }
 
-int     ft_isnum(char *str)
+int	ft_isnum(char *str)
 {
-    int     i;
-    int     n;
+    int	i;
+    int	n;
 
     if (!str || !str[0])
         return (0);
@@ -39,7 +39,7 @@ void	signal_sender(char c, pid_t pid)
 {
 	int	i;
 	int	k;
-	int check;
+	int	check;
 
 	i = 8;
 	while (i-- > 0)
@@ -57,8 +57,8 @@ void	signal_sender(char c, pid_t pid)
 
 int	main(int ac, char **av)
 {
-	int		i;
-	static char acknmsg[] = "\n-> Message received successfully";
+	int	i;
+	static char	acknmsg[] = "\n-> Message received successfully";
 
 	if (ac != 3)
 		ft_putstr_fd("=> Error\nEnter 2 and only 2 arguments\n", 1);

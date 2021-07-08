@@ -14,7 +14,7 @@
 
 t_state	state;
 
-void	signal_handler(int sig)
+void	ignal_handler(int sig)
 {	
 	state.current_bit++;
 	state.current_char = state.current_char << 1;

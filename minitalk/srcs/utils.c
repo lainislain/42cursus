@@ -25,7 +25,7 @@ void	ft_putstr_fd(char *s, int fd)
 
 void	ft_putnbr(int n)
 {
-	unsigned int nbr;
+	unsigned int	nbr;
 
 	nbr = 0;
 	if (n < 0)
@@ -47,7 +47,7 @@ void	ft_putnbr(int n)
 
 int		ft_strlen(const char *s)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (s[i])
@@ -55,11 +55,11 @@ int		ft_strlen(const char *s)
 	return (i);
 }
 
-int					ft_atoi(const char *s)
+int	ft_atoi(const char *s)
 {
 	unsigned int	num;
-	int				sign;
-	int				i;
+	int	sign;
+	int	i;
 
 	i = 0;
 	num = 0;
