@@ -24,7 +24,7 @@ int     ft_find_midpoint(t_pile *pile)
 	i = 0;
     tmp = pile;
 	part = pile->partition;
-	len = ft_len_pile(pile);
+	len = ft_len_partition(pile);
 	array = (int *)malloc(sizeof(int) * len);
 	while (tmp && tmp->partition == part)
 	{
@@ -40,24 +40,35 @@ int     ft_find_midpoint(t_pile *pile)
 void	ft_rev_pushrot(t_state *state)
 {
     t_pile  *tmp;
+	int	part;
 
     tmp = state->pile_b;
-	while (tmp)
+	part = tmp->partition;
+	//ft_putstr_fd("=> B to A\n", 1);
+	while (tmp && tmp->partition == part)
 	{
-		if (ft_len_partition(tmp, tmp->partition) == 1)
-			pa(state, 0);
-
-		else if (ft_len_partition(tmp, tmp->partition) == 2)
+		if (ft_len_partition(state->pile_b) == 1)
 		{
-			if (tmp->value <= tmp->next->value)
+			pa(state, 0);
+			tmp = state->pile_b;
+		}
+		else if (ft_len_partition(state->pile_b) == 2)
+		{
+			if (tmp->next && tmp->value < tmp->next->value)
 				sb(state, 0);
 			pa(state, 0);
 			pa(state, 0);
+			tmp = state->pile_b;
 		}
 		else
+		{
 			iter_btoa(state);
-        tmp = tmp->next;
+			tmp = state->pile_b;
+		}
+		if (tmp)
+			tmp = tmp->next;
 	}
+	//print_state(state);
 }
 
 void	ft_pushrot(t_state *state, int rot)
@@ -66,8 +77,9 @@ void	ft_pushrot(t_state *state, int rot)
 	int	part;
     int nra;
 
+	//ft_putstr_fd("=> A to B\n", 1);
 	part = state->pile_a->partition;
-	while (!part_is_sorted(state->pile_a) && ft_len_partition(state->pile_a, state->pile_a->partition) > 2)
+	while (!pile_is_sorted(state->pile_a) && ft_len_partition(state->pile_a) > 2)
 	{
 		part++;
 		nra = 0;
@@ -83,8 +95,12 @@ void	ft_pushrot(t_state *state, int rot)
 		while (!rot && nra--)
 			rra(state, 0);
 	}
-	if (!part_is_sorted(state->pile_a))
+	if (!part_is_sorted(state->pile_a) && ft_len_partition(state->pile_a) == 2)
+	{
+		//ft_putstr_fd("===> HELLO\n", 1);	
 		sa(state, 0);
+	}
+	//print_state(state);
 }
 
 int     iter_atob(t_state *state, int midpoint, int part)
@@ -105,10 +121,16 @@ void	iter_btoa(t_state *state)
 
 	nrb = 0;
 	midpoint = ft_find_midpoint(state->pile_b);
+	//ft_putstr_fd("===> midpoint:\n", 1);
+	//ft_putnbr_fd(midpoint, 1);
+	//ft_putstr_fd("\n", 1);
 	while (ft_check_sup(state->pile_b, midpoint))
 	{
 		if (state->pile_b->value > midpoint)
 		{
+				//ft_putstr_fd("===> sup:\n", 1);
+				//ft_putnbr_fd(state->pile_b->value, 1);
+				//ft_putstr_fd("\n", 1);
 			pa(state, 0);
 			state->pile_a->partition++;
 			state->pile_a->partition++;
@@ -122,4 +144,5 @@ void	iter_btoa(t_state *state)
 	while (nrb--)
 		rrb(state, 0);
 	ft_pushrot(state, 0);
+	//ft_putstr_fd("===> HELLO\n", 1);
 }

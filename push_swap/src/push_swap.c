@@ -12,39 +12,6 @@
 
 #include "push_swap.h"
 
-void	ft_midpoint_algo(t_state *state)
-{
-	if (!state->pile_a && pile_is_sorted(state->pile_a) && !state->pile_b)
-		return ;
-	if (ft_len_pile(state->pile_a) == 3)
-		mini_sort(state);
-	else
-	{
-		ft_pushrot(state, 1);
-		ft_rev_pushrot(state);
-	}
-}
-
-void    print_state(t_state *state)
-{
-    t_pile      *tmp;
-
-    tmp = state->pile_a;
-    ft_putstr_fd("===> Pile A:\n", 1);
-    while(tmp)
-    {
-        ft_putnbr_fd(tmp->value, 1);
-        tmp = tmp->next;
-    }
-    tmp = state->pile_b;
-    ft_putstr_fd("===> Pile B:\n", 1);
-    while(tmp)
-    {
-        ft_putnbr_fd(tmp->value, 1);
-        tmp = tmp->next;
-    }
-}
-
 int     main(int argc, char **argv)
 {
     t_state     state;
@@ -53,8 +20,8 @@ int     main(int argc, char **argv)
     if (state.pile_a)
     {
         ft_midpoint_algo(&state);
+        //print_state(&state);
         exit_state(&state);
     }
-    //print_state(&state);
     return (0);
 }

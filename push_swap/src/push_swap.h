@@ -15,6 +15,9 @@
 
 #include "../libft/libft.h"
 
+#define INT_MAX 2147483647
+#define INT_MIN -2147483648
+
 typedef struct		s_pile
 {
 	struct s_pile	*next;
@@ -42,6 +45,7 @@ void    rr(t_state *state, int check);
 void    rra(t_state *state, int check);
 void    rrb(t_state *state, int check);
 void    rrr(t_state *state, int check);
+long long	ft_atol(const char *str);
 int     ft_isnum(char *str);
 int     ft_issign(char c);
 void    add_back_pile(t_pile **pile, t_pile *stack);
@@ -63,8 +67,7 @@ void	ft_pushrot(t_state *state, int rot);
 int		iter_atob(t_state *state, int midpoint, int part);
 void	iter_btoa(t_state *state);
 int		ft_len_pile(t_pile *pile);
-int		ft_lastinpile_a(t_state *state);
-int		ft_len_partition(t_pile *pile, int part);
+int		ft_len_partition(t_pile *pile);
 int		ft_check_inf(t_pile *pile, int midpoint);
 int		ft_check_sup(t_pile *pile, int midpoint);
 void	mini_sort(t_state *state);

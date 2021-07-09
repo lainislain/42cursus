@@ -12,6 +12,37 @@
 
 #include "push_swap.h"
 
+void    init_state(t_state *state, int argc, char **argv)
+{
+    int     i;
+    long long	n;
+    t_pile  *tmp;
+
+    i = 0;
+    argc--;
+    argv++;
+    state->size = argc;
+    state->pile_b = NULL;
+    state->pile_a = NULL;
+    while(i < argc)
+    {
+        n = ft_atol(*argv);
+
+        if(!ft_isnum(*argv) || check_duplicate(state, n) || n > INT_MAX || n < INT_MIN)
+        {
+            ft_putstr_fd("Error\n", 1);
+            exit_state(state);
+        }
+        tmp = (t_pile*)malloc(sizeof(t_pile));
+        tmp->value = (int)n;
+        tmp->partition = 0;
+        tmp->next = NULL;
+        add_back_pile(&state->pile_a, tmp);
+        argv++;
+        i++;
+    }
+}
+
 int     pile_is_sorted(t_pile* pile)
 {
     t_pile  *tmp;
