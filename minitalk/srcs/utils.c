@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header.h"
+#include "header.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
@@ -44,8 +44,7 @@ void	ft_putnbr(int n)
 		ft_putchar_fd(nbr % 10 + '0', 1);
 }
 
-
-int		ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
 	int	i;
 
@@ -58,18 +57,18 @@ int		ft_strlen(const char *s)
 int	ft_atoi(const char *s)
 {
 	unsigned int	num;
-	int	sign;
-	int	i;
+	int				sign;
+	int				i;
 
 	i = 0;
 	num = 0;
 	sign = 1;
-	while (s[i] == '\n' ||
-			s[i] == '\t' ||
-			s[i] == '\r' ||
-			s[i] == '\v' ||
-			s[i] == '\f' ||
-			s[i] == ' ')
+	while (s[i] == '\n'
+		|| s[i] == '\t'
+		|| s[i] == '\r'
+		|| s[i] == '\v'
+		|| s[i] == '\f'
+		|| s[i] == ' ')
 		i++;
 	if (s[i] == '-' || s[i] == '+')
 	{

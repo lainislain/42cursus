@@ -19,20 +19,20 @@ int	ft_isdigit(int c)
 
 int	ft_isnum(char *str)
 {
-    int	i;
-    int	n;
+	int	i;
+	int	n;
 
-    if (!str || !str[0])
-        return (0);
-    i = 0;
-    n = ft_strlen(str);
-    while (i < n)
-    {
-        if (!ft_isdigit(str[i]))
-            return (0);
-        i++;
-    }
-    return (1);
+	if (!str || !str[0])
+		return (0);
+	i = 0;
+	n = ft_strlen(str);
+	while (i < n)
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 void	signal_sender(char c, pid_t pid)
@@ -46,19 +46,19 @@ void	signal_sender(char c, pid_t pid)
 	{
 		k = c >> i;
 		if (k & 1)
-			check = kill (pid, SIGUSR1);
+			check = kill(pid, SIGUSR1);
 		else
-			check = kill (pid, SIGUSR2);
+			check = kill(pid, SIGUSR2);
 		if (check == -1)
 			ft_putstr_fd("=> Error\n Wrong PID\n", 1);
-		usleep (100);
+		usleep(100);
 	}
 }	
 
 int	main(int ac, char **av)
 {
-	int	i;
 	static char	acknmsg[] = "\n-> Message received successfully";
+	int			i;
 
 	if (ac != 3)
 		ft_putstr_fd("=> Error\nEnter 2 and only 2 arguments\n", 1);

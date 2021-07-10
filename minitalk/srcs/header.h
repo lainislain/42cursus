@@ -17,9 +17,6 @@
 # include <signal.h>
 # include <unistd.h>
 # include <stdlib.h>
-//# include <sys/wait.h>
-//# define SIGUSR1 30
-//# define SIGUSR2 31
 
 typedef struct s_state
 {
@@ -28,7 +25,7 @@ typedef struct s_state
 }				t_state;
 
 int			ft_isdigit(int c);
-int     	ft_isnum(char *str);
+int			ft_isnum(char *str);
 void		ft_putnbr(int nb);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putchar_fd(char c, int fd);
@@ -36,5 +33,4 @@ int			ft_strlen(const char *s);
 int			ft_atoi(const char *s);
 void		signal_sender(char c, pid_t pid);
 void		signal_handler(int sig);
-
 #endif
