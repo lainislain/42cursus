@@ -14,8 +14,8 @@
 
 int	ft_len_pile(t_pile *pile)
 {
-	int	len;
-    t_pile *tmp;
+	int		len;
+	t_pile	*tmp;
 
 	tmp = pile;
 	len = 0;
@@ -26,14 +26,15 @@ int	ft_len_pile(t_pile *pile)
 	}
 	return (len);
 }
+
 int	ft_len_partition(t_pile *pile)
 {
-	int	len;
-	int	part;
-    t_pile	*tmp;
+	int		len;
+	int		part;
+	t_pile	*tmp;
 
 	len = 0;
-    tmp = pile;
+	tmp = pile;
 	part = pile->partition;
 	while (tmp && tmp->partition == part)
 	{
@@ -46,10 +47,10 @@ int	ft_len_partition(t_pile *pile)
 int	ft_check_inf(t_pile *pile, int midpoint)
 {
 	int		part;
-    t_pile	*tmp;
+	t_pile	*tmp;
 
 	tmp = pile;
-    part = pile->partition;
+	part = pile->partition;
 	while (tmp && tmp->partition == part)
 	{
 		if (tmp->value < midpoint)
@@ -83,13 +84,13 @@ void	mini_sort(t_state *state)
 
 	x = state->pile_a->value;
 	y = state->pile_a->next->value;
-    z = state->pile_a->next->next->value;
-    if (x < y && y < z)
-        return ;
+	z = state->pile_a->next->next->value;
+	if (x < y && y < z)
+		return ;
 	else if (x > y && y < x && x < z)
 		sa(state, 0);
-	else if ((x > y && y > z && x > y) ||
-            (x < y && y > z && x < z))
+	else if ((x > y && y > z && x > y)
+		|| (x < y && y > z && x < z))
 	{
 		sa(state, 0);
 		rra(state, 0);

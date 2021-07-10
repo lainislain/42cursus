@@ -81,9 +81,9 @@ void	ft_exec_instructs(t_state *checker)
 	while (*instructs)
 	{
 		if (!ft_strncmp("sa", *instructs, 2))
-            sa(checker, 1);
-        else if (!ft_strncmp("sb", *instructs, 2))
-            sb(checker, 1);
+			sa(checker, 1);
+		else if (!ft_strncmp("sb", *instructs, 2))
+			sb(checker, 1);
 		else if (!ft_strncmp("pa", *instructs, 2))
 			pa(checker, 1);
 		else if (!ft_strncmp("pb", *instructs, 2))
@@ -92,13 +92,13 @@ void	ft_exec_instructs(t_state *checker)
 			ra(checker, 1);
 		else if (!ft_strncmp("rb", *instructs, 2))
 			rb(checker, 1);
-        else if (!ft_strncmp("rra", *instructs, 3))
+		else if (!ft_strncmp("rra", *instructs, 3))
 			rra(checker, 1);
-        else if (!ft_strncmp("rrb", *instructs, 3))
+		else if (!ft_strncmp("rrb", *instructs, 3))
 			rrb(checker, 1);
-        else if (!ft_strncmp("rr", *instructs, 2))
+		else if (!ft_strncmp("rr", *instructs, 2))
 			rr(checker, 1);
-        else if (!ft_strncmp("rrr", *instructs, 3))
+		else if (!ft_strncmp("rrr", *instructs, 3))
 			rrr(checker, 1);
 		instructs++;
 	}

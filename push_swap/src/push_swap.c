@@ -12,16 +12,15 @@
 
 #include "push_swap.h"
 
-int     main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    t_state     state;
+	t_state	state;
 
-    init_state(&state, argc, argv);
-    if (state.pile_a)
-    {
-        ft_midpoint_algo(&state);
-        //print_state(&state);
-        exit_state(&state);
-    }
-    return (0);
+	init_state(&state, argc, argv);
+	if (state.pile_a)
+	{
+		ft_midpoint_algo(&state);
+		exit_state(&state);
+	}
+	return (0);
 }
