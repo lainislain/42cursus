@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rev_pushrot.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aabounak <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 13:06:24 by aabounak          #+#    #+#             */
-/*   Updated: 2021/07/10 13:06:33 by aabounak         ###   ########.fr       */
+/*   Updated: 2021/07/11 14:03:13 by amaghat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	XXX(t_state *state, t_pile *tmp)
+void	finish_shunk(t_state *state, t_pile *tmp)
 {
 	if (tmp->next && tmp->value < tmp->next->value)
 		sb(state, 0);
@@ -36,15 +36,8 @@ void	ft_rev_pushrot(t_state *state)
 			tmp = state->pile_b;
 		}
 		else if (ft_len_partition(state->pile_b) == 2)
-		{
-			// tRY if this works if it does then the file is normed.
-			XXX(state, tmp);
-			// if (tmp->next && tmp->value < tmp->next->value)
-			// 	sb(state, 0);
-			// pa(state, 0);
-			// pa(state, 0);
-			// tmp = state->pile_b;
-		}
+			finish_shunk(state, tmp);
+
 		else
 		{
 			iter_btoa(state);

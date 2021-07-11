@@ -6,7 +6,7 @@
 /*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 14:25:34 by amaghat           #+#    #+#             */
-/*   Updated: 2021/07/06 14:25:34 by amaghat          ###   ########.fr       */
+/*   Updated: 2021/07/11 14:09:06 by amaghat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,10 +96,6 @@ void	ft_exec_instructs(t_state *checker)
 			rra(checker, 1);
 		else if (!ft_strncmp("rrb", *instructs, 3))
 			rrb(checker, 1);
-		else if (!ft_strncmp("rr", *instructs, 2))
-			rr(checker, 1);
-		else if (!ft_strncmp("rrr", *instructs, 3))
-			rrr(checker, 1);
 		instructs++;
 	}
 }

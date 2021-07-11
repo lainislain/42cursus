@@ -73,4 +73,6 @@ int			ft_check_sup(t_pile *pile, int midpoint);
 void		mini_sort(t_state *state);
 void		ft_midpoint_algo(t_state *state);
 void		ft_rev_pushrot(t_state *state);
+void		init_state_condition(t_state *state, long long n, char **argv);
+void		finish_shunk(t_state *state, t_pile *tmp);
 #endif

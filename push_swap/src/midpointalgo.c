@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushrot.c                                          :+:      :+:    :+:   */
+/*   midpointalgo.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 15:52:32 by amaghat           #+#    #+#             */
-/*   Updated: 2021/07/06 15:52:32 by amaghat          ###   ########.fr       */
+/*   Updated: 2021/07/11 13:58:54 by amaghat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,29 @@ void	print_state(t_state *state)
 		ft_putstr_fd("\n", 1);
 		tmp = tmp->next;
 	}
+}
+
+void	ft_check_instruct(t_state *state, char *str)
+{
+	if (ft_strncmp("sa", str, 2) && ft_strncmp("sb", str, 2)
+		&& ft_strncmp("ss", str, 2) && ft_strncmp("pa", str, 2)
+		&& ft_strncmp("pb", str, 2) && ft_strncmp("ra", str, 2)
+		&& ft_strncmp("rb", str, 2) && ft_strncmp("rr", str, 2)
+		&& ft_strncmp("rra", str, 3) && ft_strncmp("rrb", str, 3)
+		&& ft_strncmp("rrr", str, 3))
+		exit_state(state);
+}
+
+int     check_duplicate(t_state *state, int n)
+{
+    t_pile  *tmp;
+
+    tmp = state->pile_a;
+    while (tmp)
+    {
+        if (tmp->value == n)
+            return (1);
+        tmp = tmp->next;
+    }
+    return (0);
 }

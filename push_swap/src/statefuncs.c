@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   revpushrot.c                                       :+:      :+:    :+:   */
+/*   statefuncs.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 15:52:14 by amaghat           #+#    #+#             */
-/*   Updated: 2021/07/06 15:52:14 by amaghat          ###   ########.fr       */
+/*   Updated: 2021/07/11 14:05:33 by amaghat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	init_state_condition(t_state *state, long long n, char **argv)
+void	init_state_condition(t_state *state, long long n, char **argv)
 {
 	if (!ft_isnum(*argv)
 		|| check_duplicate(state, n) || n > INT_MAX || n < INT_MIN)
