@@ -6,7 +6,7 @@
 /*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 13:02:13 by amaghat           #+#    #+#             */
-/*   Updated: 2021/07/05 18:05:43 by amaghat          ###   ########.fr       */
+/*   Updated: 2021/07/11 13:19:21 by amaghat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_isnum(char *str)
 	return (1);
 }
 
-void	signal_sender(char c, pid_t pid)
+int	signal_sender(char c, pid_t pid)
 {
 	int	i;
 	int	k;
@@ -50,27 +50,37 @@ void	signal_sender(char c, pid_t pid)
 		else
 			check = kill(pid, SIGUSR2);
 		if (check == -1)
+		{
 			ft_putstr_fd("=> Error\n Wrong PID\n", 1);
+			return (0);
+		}
 		usleep(100);
 	}
+	return (1);
 }	
 
 int	main(int ac, char **av)
 {
 	static char	acknmsg[] = "\n-> Message received successfully";
 	int			i;
+	int			check;
 
-	if (ac != 3)
-		ft_putstr_fd("=> Error\nEnter 2 and only 2 arguments\n", 1);
-	else if (!ft_isnum(av[1]))
-		ft_putstr_fd("=> Error\nPID should be a positive integer\n", 1);
+	if (ac != 3 || !ft_isnum(av[1]))
+	{
+		ft_putstr_fd("=> Error\nUsage: ./client PID Messqge\n", 1);
+		return (0);
+	}
 	i = 0;
-	while (av[2][i])
-		signal_sender(av[2][i++], ft_atoi(av[1]));
+	check = 1;
+	while (av[2][i] && check)
+		check = signal_sender(av[2][i++], ft_atoi(av[1]));
 	i = 0;
-	while (acknmsg[i])
-		signal_sender(acknmsg[i++], ft_atoi(av[1]));
-	signal_sender('\n', ft_atoi(av[1]));
-	ft_putstr_fd("-> Message sent successfully\n", 1);
+	while (acknmsg[i] && check)
+		check = signal_sender(acknmsg[i++], ft_atoi(av[1]));
+	if (check)
+	{
+		signal_sender('\n', ft_atoi(av[1]));
+		ft_putstr_fd("-> Message sent successfully\n", 1);
+	}
 	return (0);
 }
