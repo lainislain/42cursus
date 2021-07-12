@@ -8,8 +8,8 @@ SRCS = 	src/midpoint.c\
 	src/utiles.c\
 	src/midpointalgo.c\
 	src/sortingtools.c\
-	src/statefuncs.c \
-	src/ft_rev_pushrot.c
+	src/statefuncs.c\
+	src/revpushrot.c
 		
 
 OBJS = 	push_swap.o\
@@ -21,7 +21,7 @@ OBJS = 	push_swap.o\
 	midpointalgo.o\
 	sortingtools.o\
 	statefuncs.o\
-	ft_rev_pushrot.o
+	revpushrot.o
 
 all: $(NAME)
 

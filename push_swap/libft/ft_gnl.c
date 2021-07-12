@@ -20,9 +20,8 @@ static char	*chrjoin(char *s, char c)
 	i = 0;
 	while (s[i])
 		i++;
-	str = (char *)malloc(i + 2);
-	if (!str)
-		return (NULL);
+	if (!(str = (char *)malloc(i + 2)))
+		return (0);
 	i = 0;
 	while (s[i])
 	{
@@ -35,20 +34,17 @@ static char	*chrjoin(char *s, char c)
 	return (str);
 }
 
-int	ft_gnl(int fd, char **line)
+int			ft_gnl(int fd, char **line)
 {
 	char	*buffer;
 	int		flag;
 
 	buffer = (char *)malloc(2);
-	*line = (char *)malloc(1);
-	if (!line || !(*line) || !buffer)
+	if (!line || !(*line = (char *)malloc(1)) || !buffer)
 		return (-1);
 	*line[0] = '\0';
-	flag = read(fd, buffer, 1);
-	while (flag > 0)
+	while ((flag = read(fd, buffer, 1)) > 0)
 	{
-		flag = read(fd, buffer, 1);
 		if (buffer[0] == '\n')
 			break ;
 		*line = chrjoin(*line, buffer[0]);

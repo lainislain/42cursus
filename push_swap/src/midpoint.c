@@ -6,7 +6,7 @@
 /*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 13:25:24 by amaghat           #+#    #+#             */
-/*   Updated: 2021/07/06 13:25:24 by amaghat          ###   ########.fr       */
+/*   Updated: 2021/07/12 19:10:57 by amaghat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,30 +72,4 @@ int	iter_atob(t_state *state, int midpoint, int part)
 		return (0);
 	}
 	return (1);
-}
-
-void	iter_btoa(t_state *state)
-{
-	int	midpoint;
-	int	nrb;
-
-	nrb = 0;
-	midpoint = ft_find_midpoint(state->pile_b);
-	while (ft_check_sup(state->pile_b, midpoint))
-	{
-		if (state->pile_b->value > midpoint)
-		{
-			pa(state, 0);
-			state->pile_a->partition++;
-			state->pile_a->partition++;
-		}
-		else
-		{
-			rb(state, 0);
-			nrb++;
-		}
-	}
-	while (nrb--)
-		rrb(state, 0);
-	ft_pushrot(state, 0);
 }

@@ -6,7 +6,7 @@
 /*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 15:52:14 by amaghat           #+#    #+#             */
-/*   Updated: 2021/07/11 14:05:33 by amaghat          ###   ########.fr       */
+/*   Updated: 2021/07/12 20:55:58 by amaghat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,6 @@ void	init_state(t_state *state, int argc, char **argv)
 	while (i < argc)
 	{
 		n = ft_atol(*argv);
-		// changed it with init_state_condition(...);
-		// if (!ft_isnum(*argv)
-		// 	|| check_duplicate(state, n) || n > INT_MAX || n < INT_MIN)
-		// {
-		// 	ft_putstr_fd("Error\n", 1);
-		// 	exit_state(state);
-		// }
 		init_state_condition(state, n, argv);
 		tmp = (t_pile *)malloc(sizeof(t_pile));
 		tmp->value = (int)n;
