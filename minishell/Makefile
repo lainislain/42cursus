@@ -6,7 +6,7 @@
 #    By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/15 08:04:18 by abelarif          #+#    #+#              #
-#    Updated: 2021/10/12 16:39:52 by amaghat          ###   ########.fr        #
+#    Updated: 2021/10/12 17:16:51 by abelarif         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,11 +42,14 @@ BUILTINS_SRCS=			./builtins/set_env.c\
 						./builtins/buil_unset.c\
 						./builtins/buil_export.c\
 						./builtins/buil_export_utils.c\
+						./builtins/buil_export_utils2.c\
 
 EXECUTION_SRCS=			./execution/exec_path.c\
 						./execution/execution.c\
+						./execution/execution2.c\
 						./execution/input_output_dup.c\
 						./execution/execute_line.c\
+						./execution/execute_line2.c\
 						./execution/simple_builtin.c\
 						./execution/heredocs.c\
 						./execution/init_pipes.c\
@@ -59,6 +62,7 @@ PARSING_SRCS=			./parsing/extraction.c\
 						./parsing/extract_tokens.c\
 						./parsing/tokens_handling.c\
 						./parsing/expand_quotes.c\
+						./parsing/env_search.c\
 
 UTILS_SRCS=				./utils/max_of.c\
 						./utils/ft_errors.c\

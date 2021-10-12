@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 15:41:44 by abelarif          #+#    #+#             */
-/*   Updated: 2021/10/12 16:46:25 by amaghat          ###   ########.fr       */
+/*   Updated: 2021/10/12 17:18:56 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,9 @@ int				*get_fds_files(int index, t_execution *execution);
 int				check_redirections_errors(int index, t_execution *execution);
 int				get_fd(int index, t_execution *execution, int i);
 int				builtin_export(char **args, int *types);
+int				*get_execution_types(t_tokens tokens);
+int				*get_execution_files_type(t_tokens tokens);
+int				is_wrong_arg(char *arg);
 
 void			sort_env(void);
 void			terminal_view(void);
@@ -167,6 +170,8 @@ void			heredocs_parsing(t_execution *execution);
 void			dup_in_out(int index, int *pipes, t_execution *execution);
 void			create_childs(t_execution *execution);
 void			export_add_env(char *var, char *value);
+void			join_bs(char **paths);
+void			print_export_errors(char **args);
 
 char			*prompt(void);
 char			*read_line(void);
@@ -181,6 +186,9 @@ char			**set_env(char *variable, char *value);
 char			*get_exec_path(t_tokens token, char **paths);
 char			**splitSep(char *line, int *sepIndex, int nbSep);
 char			**join_args(char **args, int *types);
+char			*env_search(char *str, int index);
+char			**get_execution_args(t_tokens tokens, char *command);
+char			**get_execution_files(t_tokens tokens);
 
 t_quote			init_quote(void);
 t_quote			set_quote_value(char quote_type, t_quote to_quote);

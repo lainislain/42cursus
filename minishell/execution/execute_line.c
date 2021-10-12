@@ -6,29 +6,11 @@
 /*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 15:59:02 by abelarif          #+#    #+#             */
-/*   Updated: 2021/10/09 17:33:19 by abelarif         ###   ########.fr       */
+/*   Updated: 2021/10/12 17:09:23 by abelarif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
-
-int	is_input_redir(int file_type)
-{
-	if (abs_value(file_type) == REDI0)
-		return (1);
-	if (abs_value(file_type) == HEREDOC)
-		return (1);
-	return (0);
-}
-
-int	is_output_redir(int file_type)
-{
-	if (abs_value(file_type) == REDO0)
-		return (1);
-	if (abs_value(file_type) == REDO1)
-		return (1);
-	return (0);
-}
 
 void	child_process_errors(t_execution *execution, int index)
 {

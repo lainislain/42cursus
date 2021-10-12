@@ -1,8 +1,0 @@
-https://nickolasteixeira.medium.com/want-to-build-a-simple-shell-heres-how-you-do-it-75890647bae8
-https://stackoverflow.com/questions/35545785/c-program-to-execute-shell-piping-and-redirection
-https://stackoverflow.com/questions/50610781/implementing-pipe-and-redirection-together-in-c/50611612
-https://askubuntu.com/questions/172982/what-is-the-difference-between-redirection-and-pipe
-https://askubuntu.com/questions/172982/what-is-the-difference-between-redirection-and-pipe
-https://github.com/Swoorup/mysh
-https://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html
-https://bash.cyberciti.biz/guide/What_is_a_Process%3F#More_about_Process
