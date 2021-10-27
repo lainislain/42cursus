@@ -12,6 +12,11 @@
 
 #include	"philo.h"
 
+int		check_args(char	*args)
+{
+	return (0);
+}
+
 void	routine(void);
 
 void	init_supervisor(void)
