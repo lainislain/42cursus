@@ -17,7 +17,10 @@ int		check_args(char	*args)
 	return (0);
 }
 
-void	routine(void);
+void	routine(void)
+{
+	return ;
+}
 
 void	init_supervisor(void)
 {
