@@ -95,6 +95,6 @@ int ft_printf(const char *fmt, ...)
 
 int main()
 {
-    ft_printf("%x\n", INT_MIN);
-    printf("%x\n", INT_MIN);
+    ft_printf("%s\n", "hello");
+    printf("%s\n", "hello");
 }
