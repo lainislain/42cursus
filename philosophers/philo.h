@@ -1,76 +1,45 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   philo.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 18:14:03 by amaghat           #+#    #+#             */
-/*   Updated: 2021/11/18 18:14:03 by amaghat          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef PHILO_H
 # define PHILO_H
 
-# include <stdlib.h>
-# include <stdio.h>
-# include <unistd.h>
 # include <pthread.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 # include <sys/time.h>
-# include <stdbool.h>
 
-typedef struct s_philo
+typedef struct s_philosophers
 {
-	size_t	n;
-	size_t	time_to_die;
-	size_t	time_to_eat;
-	size_t	time_to_sleep;
-	size_t	meals;
-}	t_philo;
+	pthread_t			thread;
+	unsigned long long	last_eat;
+	long long	nb_meals;
+	int					eating;
+}				t_philosophers;
 
-typedef struct s_book
+typedef struct s_infos
 {
-	pthread_t			philo;
-	size_t				id;
-	size_t				start;
-	size_t				last_m;
-	size_t				n_meals;
-	int					flag;
-	pthread_mutex_t		myfork;
-	bool				is_eating;
-	bool				is_sleeping;
-}	t_book;
+	int					id;
+	unsigned long long	start;
+	unsigned long long	number;
+	unsigned long long	die;
+	unsigned long long	eat;
+	unsigned long long	sleep;
+	long long	pme;
+	t_philosophers		*philo;
+	pthread_mutex_t		*is_eating;
+	pthread_mutex_t		*forks;
+	pthread_mutex_t		prints;
+}				t_infos;
 
-typedef struct s_global
-{
-	t_book			*wise;
-	struct timeval	startp;
-	pthread_mutex_t	print;
-	pthread_mutex_t	inc_meal;
-	t_philo			*data;
-	int				ac;
-}			t_global;
-
-t_global	g_all;
-
-double		current_timestamp(void);
-void		print_to_screen(size_t id, char *msg);
-void		sleeper( t_book *philo);
-double		no_time(int id);
-void		eat(t_book *philo);
-int			check_philo(t_book *philo);
-void		*routine(void *arg);
-void		philo_func(char **av);
-void		supervisor(void);
-void		clean(void);
-void		usleeper2(double time);
-int			ft_atoi(const char *str);
-int			ft_isdigit(char c);
-int			check_args(char **av);
-int			ft_strncmp(const char *s1, const char *s2, size_t n);
-int			ft_strlen(const char *s);
-void		init_data(char **av);
-int			check_values(void);
-
+int					ft_isdigit(int c);
+int					ft_is_alldigit(char *str);
+int					ft_atoi(const char *s);
+unsigned long long	ft_gettime(void);
+t_infos				*statlist(void);
+void				my_sleep(unsigned long long i);
+t_infos				*eating(t_infos *info, int id);
+void				*routine(void *arg);
+int					initialisation(char **argv, int argc);
+int					check_death(void);
+int					beggin(unsigned long long i, int *id);
+void				free_shit(t_infos *info, int *id);
 #endif

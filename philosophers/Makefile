@@ -1,22 +1,16 @@
+FLAGS = -Werror -Wextra -Wall -pthread
 NAME = philo
+SRC = philo.c outils.c outils_libft.c working.c
 
-SRC = main.c \
-	  routine.c \
-	  utils.c \
-	  more_utils.c \
-	  libft.c\
-	  parsing.c
+all:	$(NAME)
 
-all: $(NAME)
-
-$(NAME):
-	gcc $(SRC) -pthread -Wall -Werror -Wextra  -o $(NAME)
+$(NAME) : $(SRC)
+	gcc $(FLAGS) $(SRC) -o $(NAME)
 
 clean:
-	rm -rf $(NAME)
+	
 
-fclean: clean
+fclean:	clean
+	rm -f $(NAME)
 
-re: fclean all
-
-.PHONY: fclean all re clean
+re:		fclean all
