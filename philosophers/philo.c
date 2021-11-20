@@ -30,7 +30,6 @@ int	initialisation(char **argv, int argc)
 int	check_death(void)
 {
 	t_infos				*info;
-	//unsigned long long	test;
 	unsigned long long	full;
 	unsigned long long	i;
 
@@ -39,7 +38,6 @@ int	check_death(void)
 	info = statlist();
 	while (i < info->number)
 	{
-		//test = ft_gettime() - info->philo[i].last_eat;
 		if ((info->die <= (ft_gettime() - info->philo[i].last_eat))
 			&& (info->philo[i].eating == 0))
 		{
@@ -84,7 +82,7 @@ int	beggin(unsigned long long i, int *id)
 	return (0);
 }
 
-void	free_shit(t_infos *info, int *id)
+void	free_data(t_infos *info, int *id)
 {
 	free(info->philo);
 	free(info->forks);
@@ -95,10 +93,8 @@ void	free_shit(t_infos *info, int *id)
 int	main(int argc, char **argv)
 {
 	t_infos		*info;
-	//int			i;
 	int			*id;
 
-	//i = 0;
 	info = statlist();
 	info->start = ft_gettime();
 	id = malloc(sizeof (int));
@@ -111,7 +107,7 @@ int	main(int argc, char **argv)
 		info->is_eating = malloc((sizeof (pthread_mutex_t)) * info->number);
 		if (beggin(0, id))
 		{
-			free_shit(info, id);
+			free_data(info, id);
 			return (1);
 		}
 	}

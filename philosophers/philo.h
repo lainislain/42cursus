@@ -41,5 +41,5 @@ void				*routine(void *arg);
 int					initialisation(char **argv, int argc);
 int					check_death(void);
 int					beggin(unsigned long long i, int *id);
-void				free_shit(t_infos *info, int *id);
+void				free_data(t_infos *info, int *id);
 #endif
