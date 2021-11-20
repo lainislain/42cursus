@@ -7,6 +7,7 @@
 # include <limits.h>
 # include <stdlib.h>
 # include "./mlx_linux/mlx.h"
+# include "./libft/libft.h"
 
 # define BUFFER_SIZE 32
 # define DEG_2_RAD (0.01745329252)

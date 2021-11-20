@@ -1,5 +1,21 @@
 #include "fdf.h"
 
+int		count_words(char *line, char c)
+{
+	int		i;
+	int		count;
+
+	i = 0;
+	count = 0;
+	while (line[i])
+	{
+		if(line[i]==c)
+			count++;
+		i++;
+	}
+	return (count + 1);
+}
+
 static void	update_map_constants(int x, int y, int z, t_map *map)
 {
 	if (map->length_z < z)

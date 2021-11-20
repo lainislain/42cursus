@@ -30,12 +30,10 @@ $(NAME): $(OBJ)
 
 
 clean:
-		make -C $(LIBFT) clean
+		
 
 fclean: clean
 		$(RM) $(NAME)
-		make -C $(MLX) clean -s
-		make -C $(LIBFT) fclean -s
 
 re: fclean all
 
