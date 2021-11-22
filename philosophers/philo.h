@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/22 15:02:28 by amaghat           #+#    #+#             */
+/*   Updated: 2021/11/22 15:02:28 by amaghat          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHILO_H
 # define PHILO_H
 
@@ -31,15 +43,15 @@ typedef struct s_infos
 }				t_infos;
 
 int					ft_isdigit(int c);
-int					ft_is_alldigit(char *str);
+int					ft_isnum(char *str);
 int					ft_atoi(const char *s);
 unsigned long long	ft_gettime(void);
+void				ft_sleep(unsigned long long i);
 t_infos				*statlist(void);
-void				my_sleep(unsigned long long i);
 t_infos				*eating(t_infos *info, int id);
 void				*routine(void *arg);
 int					initialisation(char **argv, int argc);
 int					check_death(void);
-int					beggin(unsigned long long i, int *id);
+int					supervisor(unsigned long long i, int *id);
 void				free_data(t_infos *info, int *id);
 #endif

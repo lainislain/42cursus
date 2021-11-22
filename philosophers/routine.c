@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   routine.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/22 15:02:33 by amaghat           #+#    #+#             */
+/*   Updated: 2021/11/22 15:02:33 by amaghat          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 t_infos	*eating(t_infos *info, int id)
@@ -17,7 +29,7 @@ t_infos	*eating(t_infos *info, int id)
 	pthread_mutex_lock(&info->prints);
 	printf("%lld %d is eating\n", ft_gettime()-info->start, id+1);
 	pthread_mutex_unlock(&info->prints);
-	my_sleep(info->eat);
+	ft_sleep(info->eat);
 	info->philo[id].eating = 0;
 	pthread_mutex_unlock(&info->is_eating[id]);
 	pthread_mutex_unlock(&info->forks[id]);
@@ -40,7 +52,7 @@ void	*routine(void *arg)
 		pthread_mutex_lock(&info->prints);
 		printf("%lld %d is sleeping\n", ft_gettime()-info->start, id+1);
 		pthread_mutex_unlock(&info->prints);
-		my_sleep(info->sleep);
+		ft_sleep(info->sleep);
 		pthread_mutex_lock(&info->prints);
 		printf("%lld %d is thinking\n", ft_gettime()-info->start, id+1);
 		pthread_mutex_unlock(&info->prints);

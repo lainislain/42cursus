@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaghat <amaghat@student.1337.ma>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/22 15:02:40 by amaghat           #+#    #+#             */
+/*   Updated: 2021/11/22 15:02:40 by amaghat          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 unsigned long long	ft_gettime(void)
@@ -17,17 +29,17 @@ t_infos	*statlist(void)
 	return (&ret);
 }
 
-void	my_sleep(unsigned long long i)
+void	ft_sleep(unsigned long long i)
 {
-	unsigned long long	current_time;
-	unsigned long long	time_beggin;
+	unsigned long long	current;
+	unsigned long long	start;
 
-	time_beggin = ft_gettime();
+	start = ft_gettime();
 	while (1)
 	{
 		usleep(100);
-		current_time = ft_gettime();
-		if (current_time >= time_beggin + i)
+		current = ft_gettime();
+		if (current >= start + i)
 			break ;
 	}
 }

@@ -5,8 +5,8 @@ int	initialisation(char **argv, int argc)
 	t_infos		*info;
 
 	info = statlist();
-	if (ft_is_alldigit(argv[1]) && ft_is_alldigit(argv[2])
-		&& ft_is_alldigit(argv[3]) && ft_is_alldigit(argv[4]))
+	if (ft_isnum(argv[1]) && ft_isnum(argv[2])
+		&& ft_isnum(argv[3]) && ft_isnum(argv[4]))
 	{
 		info->number = ft_atoi(argv[1]);
 		info->die = ft_atoi(argv[2]);
@@ -14,7 +14,7 @@ int	initialisation(char **argv, int argc)
 		info->sleep = ft_atoi(argv[4]);
 		if (argc == 6)
 		{
-			if (ft_is_alldigit(argv[5]))
+			if (ft_isnum(argv[5]))
 				info->pme = ft_atoi(argv[5]);
 			else
 				return (1);
@@ -53,7 +53,7 @@ int	check_death(void)
 	return (0);
 }
 
-int	beggin(unsigned long long i, int *id)
+int	supervisor(unsigned long long i, int *id)
 {
 	t_infos	*info;
 
@@ -105,7 +105,7 @@ int	main(int argc, char **argv)
 		info->philo = malloc((sizeof (t_philosophers)) * info->number);
 		info->forks = malloc((sizeof (pthread_mutex_t)) * info->number);
 		info->is_eating = malloc((sizeof (pthread_mutex_t)) * info->number);
-		if (beggin(0, id))
+		if (supervisor(0, id))
 		{
 			free_data(info, id);
 			return (1);
@@ -113,7 +113,7 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		printf("Number of args is unavailable\n");
+		printf("Invalid number of args\n");
 		return (1);
 	}
 }
