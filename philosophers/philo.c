@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abelarif <abelarif@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/22 15:02:28 by amaghat           #+#    #+#             */
+/*   Updated: 2021/11/23 02:04:27 by abelarif         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 int	initialisation(char **argv, int argc)
@@ -41,7 +53,7 @@ int	check_death(void)
 		if ((info->die <= (ft_gettime() - info->philo[i].last_eat))
 			&& (info->philo[i].eating == 0))
 		{
-			printf("%lld %lld died\n", ft_gettime()-info->start, i+1);
+			printf("%lld %lld died\n", ft_gettime() - info->start, i + 1);
 			return (1);
 		}
 		if (info->pme >= 0)

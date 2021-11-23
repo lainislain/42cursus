@@ -23,7 +23,7 @@ typedef struct s_philosophers
 {
 	pthread_t			thread;
 	unsigned long long	last_eat;
-	long long	nb_meals;
+	long long			nb_meals;
 	int					eating;
 }				t_philosophers;
 
@@ -35,7 +35,7 @@ typedef struct s_infos
 	unsigned long long	die;
 	unsigned long long	eat;
 	unsigned long long	sleep;
-	long long	pme;
+	long long			pme;
 	t_philosophers		*philo;
 	pthread_mutex_t		*is_eating;
 	pthread_mutex_t		*forks;
