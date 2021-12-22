@@ -76,8 +76,8 @@ docker
 
 ```shell
 # Download
-git clone https://github.com/lainislain/42cursus/tree/master/ft_server.git
-cd ft_server
+git clone https://github.com/lainislain/42cursus.git
+cd 42cursus/ft_server
 # Create image
 docker build . -t ft_server
 # Launch container
@@ -85,15 +85,5 @@ docker run -it -p 80:80 -p 443:443 -e AUTOINDEX=on --name ft_server ft_server ba
 # Launch WebBrowser
 https://localhost/
 ```
-
----
-
-## References
-
-- Learn Docker - [NetworkChuck](https://www.youtube.com/watch?v=eGz9DS-aIeY&ab_channel=NetworkChuck)
-- Curso Docker - [Fazt Code](https://www.youtube.com/watch?v=NVvZNmfqg6M&t=1987s&ab_channel=FaztCode)
-- Dockerfile reference - [Docker Documentation](https://docs.docker.com/engine/reference/builder/)
-- Installing MariaDB - [MariaDB](https://mariadb.com/kb/en/getting-installing-and-upgrading-mariadb/)
-- PHP Manual - [Command line usage](https://www.php.net/manual/en/features.commandline.options.php)
 
 ---
