@@ -4,7 +4,7 @@ This project is inspired by the world-renowned eponymous game, considered the fi
 
 ---
 
-## How To Use
+## How To Play
 
 ```shell
 git clone https://github.com/lainislain/42cursus.git
