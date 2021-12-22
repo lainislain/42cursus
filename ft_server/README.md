@@ -76,7 +76,7 @@ docker
 
 ```shell
 # Download
-git clone https://github.com/parismart/ft_server.git
+git clone https://github.com/lainislain/42cursus/tree/master/ft_server.git
 cd ft_server
 # Create image
 docker build . -t ft_server
