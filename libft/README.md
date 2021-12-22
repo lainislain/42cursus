@@ -1,0 +1,1 @@
+As a student of 42, this first project has allowed me to consolidate what I acquired during the pool. I reprogrammed some functions from the standard C library, as well as other useful functions that I need throughout my training.
