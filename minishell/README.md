@@ -4,11 +4,6 @@ The goal of this project is to create a simple shell. Mostly processes and file 
 
 ---
 
-### Scheme
-![Scheme](minishell.png)
-
----
-
 ### Developed commands
 ```bash
 - Find and launch the appropriate executable.
