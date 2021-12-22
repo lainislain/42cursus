@@ -2,21 +2,6 @@
 
 ![logo](https://upload.wikimedia.org/wikipedia/commons/7/79/Docker_%28container_engine%29_logo.png)
 
-### Index 📋
-You're sections headers will be used to reference location of destination.
-
-- [Description](#description)
-	- [Components 🛠️](#components)
-  - [Technologies](#technologies)
-- [How To Use](#how-to-use)
-	- [Installation 🔧](#installation)
-	- [Usage 📦](#usage)
-- [References 📌](#references)
-- [License 📄](#license)
-- [Author Info  ✒️](#author-info)
-
----
-
 ## Description
 
 This statement is intended to introduce you to basic system and network administration. 
@@ -41,11 +26,7 @@ It will allow you to install a complete web server, thanks to a deployment techn
 
 - ```Diffie-Hellman``` cryptographic protocol: Is a protocol for establishing keys between parties that have not had previous contact, using an insecure channel and anonymously.
 
-[Back To The Top](#ft_server)
-
 ---
-
-## How To Use
 
 ### Installation
 
@@ -107,8 +88,6 @@ docker run -it -p 80:80 -p 443:443 -e AUTOINDEX=on --name ft_server ft_server ba
 https://localhost/
 ```
 
-[Back To The Top](#ft_server)
-
 ---
 
 ## References
@@ -119,5 +98,4 @@ https://localhost/
 - Installing MariaDB - [MariaDB](https://mariadb.com/kb/en/getting-installing-and-upgrading-mariadb/)
 - PHP Manual - [Command line usage](https://www.php.net/manual/en/features.commandline.options.php)
 
-
-[Back To The Top](#ft_server)
+---
