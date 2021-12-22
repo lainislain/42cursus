@@ -74,8 +74,6 @@ docker
 
 ### Usage
 
-> Deployment
-
 ```shell
 # Download
 git clone https://github.com/parismart/ft_server.git
