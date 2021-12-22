@@ -23,8 +23,6 @@ The goal of this project is to create a simple shell. Mostly processes and file 
 - ctrl-C, ctrl-D y ctrl-\ should show the same result as in the bash.
 ```
 
-[Back To The Top](#minishell)
-
 ---
 
 ### Allowed Functions
@@ -55,8 +53,6 @@ The goal of this project is to create a simple shell. Mostly processes and file 
 - **closedir** = [Closes the directory stream.](https://linux.die.net/man/3/closedir)
 - **strerror** = [Returns an error message.](https://www.tutorialspoint.com/c_standard_library/c_function_strerror.htm)
 - **errno** = [Number of last error, its a variable.](https://www.youtube.com/watch?v=IZiUT-ipnj0&ab_channel=JacobSorber)
-
-[Back To The Top](#minishell)
 
 ---
 
